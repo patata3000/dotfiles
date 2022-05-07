@@ -1,0 +1,11 @@
+[Unit]
+Description=Mailbox synchronization service
+
+[Service]
+EnvironmentFile=/etc/sysconfig/mbsync
+Type=oneshot
+ExecStart=/usr/bin/mbsync -c /home/guillaume/.config/isync/mbsyncrc aleia-outlook
+ExecStartPost=/usr/bin/notmuch new
+
+[Install]
+WantedBy=default.target

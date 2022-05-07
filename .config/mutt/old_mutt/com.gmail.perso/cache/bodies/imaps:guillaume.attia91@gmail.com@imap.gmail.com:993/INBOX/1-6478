@@ -1,0 +1,209 @@
+Delivered-To: guillaume.attia91@gmail.com
+Received: by 2002:a5e:a80a:0:0:0:0:0 with SMTP id c10csp519275ioa;
+        Mon, 11 May 2020 12:05:11 -0700 (PDT)
+X-Received: by 2002:a05:620a:22f7:: with SMTP id p23mr10135207qki.261.1589223910988;
+        Mon, 11 May 2020 12:05:10 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1589223910; cv=none;
+        d=google.com; s=arc-20160816;
+        b=cC8c7dsgMX7QipM8fQPojZ9oUFooO8HxeKXlRGLYlUf6L58hwva/T7jkvJ6G2r/Scu
+         3Pbrs5bJ0aU0Yu05l0M7o3TpZ1Rb9v723hVR0mbLmZzQ2M6kiFOPQf3754EqNQquC4ID
+         nPw5tfVT4X/KkuXXsEpVY+ptvWyJy1irwi4k8YS4w+jsTdtbcCkMkLlVYx8p/3Z+lOWg
+         3w/p/raGxFlbRe5+S9h+nooL18nW4YJ1dO+lFdbw7efafNdpDsoJq9ox1zj1+aQhcrmr
+         1Ez5GWMcEARau5VCOmEUog+svibJ522KEzgTNVdMyXnHVe/8NryisHf3atVZjq8m+d4g
+         lpvA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:feedback-id:date:mime-version
+         :dkim-signature;
+        bh=TxotiEh25CbJgsOm7eaMIOc9ysj9vMHD77j6j51YoDw=;
+        b=ykc35zTShcT+ixkFY8QspVscIdaEnNXu5pZlmFPx7/tEsQtrpn9jEeB6Y31H7vJO5q
+         EM1rNF1JxuO48y9+aYbNtnVowiWmY3Fhg3ehwDQLOuVRs+E7qN5E2FfHGPwPesRuvZ+L
+         Wu+bLx5429qsTZtn7b3E68WFS2E0SFAmZq/ut1TvsNIQjgtmiCd1x7a5sFah/kOJ/f0z
+         SqGsYDIjtwKuTmXg77RXxtE0Nzv0CXvj3tIZSvq/lfAumbCjTyIpwWOkpBskxdmuVXeA
+         yk/ugQcoZdcYK7cK+ZAWL2EMqu9D1vNv6/TIVVO66VcY+0dPS0LeErp7ViGsOL9E4iyO
+         7CjA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@accounts.google.com header.s=20161025 header.b=gsFnTGU3;
+       spf=pass (google.com: domain of 35qg5xggtaa001-4r2ybnpp17065.t11tyr.p1z@gaia.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=35qG5XggTAA001-4r2yBnpp17065.t11tyr.p1z@gaia.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com
+Return-Path: <35qG5XggTAA001-4r2yBnpp17065.t11tyr.p1z@gaia.bounces.google.com>
+Received: from mail-sor-f73.google.com (mail-sor-f73.google.com. [209.85.220.73])
+        by mx.google.com with SMTPS id t80sor10193469qke.112.2020.05.11.12.05.10
+        for <guillaume.attia91@gmail.com>
+        (Google Transport Security);
+        Mon, 11 May 2020 12:05:10 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 35qg5xggtaa001-4r2ybnpp17065.t11tyr.p1z@gaia.bounces.google.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@accounts.google.com header.s=20161025 header.b=gsFnTGU3;
+       spf=pass (google.com: domain of 35qg5xggtaa001-4r2ybnpp17065.t11tyr.p1z@gaia.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=35qG5XggTAA001-4r2yBnpp17065.t11tyr.p1z@gaia.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=accounts.google.com; s=20161025;
+        h=mime-version:date:feedback-id:message-id:subject:from:to;
+        bh=TxotiEh25CbJgsOm7eaMIOc9ysj9vMHD77j6j51YoDw=;
+        b=gsFnTGU3AePuH27kJxPyUL28Tmo980y4rnvoUYptz6h8YjebBWHAJjIH/P6u1HtA9J
+         vcHgiGYUg2r5wfZlWD6jXlsx5xnWpU64mICt4f2y7lRLW+0LkIsiccbAAOgBDOdxp6cK
+         IxV773coTScb4ogNe7Vp0QKsn7gUnNCZCsVkuzXDa9B+gYAeeWwsRciK0NXApehATIEi
+         /iyfukhramH3507zdteOQ+84hMMNxaS+jEUcolXb0ZjKXCC061Oz1Umo9nN5J/MWbC3C
+         1AgTTEeV0FXdQ8PAA7u3l2lH5GZFSDr3W5XA/gI+SMaT6b0RVRp9diYwoz/TDDbf2BG+
+         DtFg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:date:feedback-id:message-id:subject
+         :from:to;
+        bh=TxotiEh25CbJgsOm7eaMIOc9ysj9vMHD77j6j51YoDw=;
+        b=Onh1TpOfvDxouAqjb/lHlIQFrIOl6wM2x1lOxNZQqLr5rqeKlwa0SoCPM61UhQ2qou
+         Lrrm2SRYzm7/dsCkoYzxYhMBgehW8ZgcdfN5fAyCOlSfSRLlA5TcfExvO90R1ivwa38P
+         mzLi8HV0rRUp+n3so0cUAcyXfx4hcnfgYbqSbWu0rFKn2oLhw/6sDP8dRj/1aReezRR5
+         DfCT4wWvIQ5wQW/ef/evU2nJmzDQiiAxUlwIZ7+qX/rkzO7BkBxqlBfTFZaMydlOYjlH
+         8MFwVyoof7nlydJ6iGcyixJDBUc1PvrBWMeM7goy5T5ftIbPSUf5ytCnd06v7qUchfeP
+         ET1A==
+X-Gm-Message-State: AOAM5317d6I8WjR7kDoYskAGKEDlIvtuIwrfbhOEUAeuKclnEPJo3Wvh
+	o822e1h+2PvnEPmhG63D1GA5/XU0d5tM
+X-Google-Smtp-Source: ABdhPJyMfnxda4yPz5KBUM9cOoKpN9pBuvMgwkc17F0PBfcK+k4imW3460AKuo42BtQm8GBeKG1C9+2oyQ7cvsPx9KVNxg==
+MIME-Version: 1.0
+X-Received: by 2002:a05:620a:1266:: with SMTP id b6mr849054qkl.427.1589223910755;
+ Mon, 11 May 2020 12:05:10 -0700 (PDT)
+Date: Mon, 11 May 2020 19:05:09 +0000 (GMT)
+X-Account-Notification-Type: 102-anexp#dcav2-f1
+Feedback-ID: 102-anexp#dcav2-f1:account-notifier
+X-Notifications: c295d67a2c400000
+Message-ID: <ZEAVteJjcanFAZsZlIosAw.0@notifications.google.com>
+Subject: You changed the way you sign in
+From: Google <no-reply@accounts.google.com>
+To: guillaume.attia91@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000ab4e4e05a56406f2"
+
+--000000000000ab4e4e05a56406f2
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+W2ltYWdlOiBHb29nbGVdDQpZb3UgdHVybmVkIG9uICdVc2UgeW91ciBwaG9uZSB0byBzaWduIGlu
+Jw0KDQoNCmd1aWxsYXVtZS5hdHRpYTkxQGdtYWlsLmNvbQ0KWW91IGNhbiBub3cgc2lnbiBpbiB0
+byB5b3VyIEdvb2dsZSBBY2NvdW50IGd1aWxsYXVtZS5hdHRpYTkxQGdtYWlsLmNvbSBieQ0KdGFw
+cGluZyBhIHByb21wdCBvbiB5b3VyIHBob25lLg0KDQpHdWlsbGF1bWUgQXR0aWENCmd1aWxsYXVt
+ZS5hdHRpYTkxQGdtYWlsLmNvbQ0KDQpMaW51eA0KTW9uZGF5LCAxMSBNYXkgMjAyMCAyMTowNSAo
+Q0VUKQ0KRnJhbmNlKipXYW50IHRvIHNpZ24gaW4gd2l0aCBhIGRpZmZlcmVudCBwaG9uZT8qDQpH
+byB0byBVc2UgeW91ciBwaG9uZSB0byBzaWduIGluDQo8aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUu
+Y29tL0FjY291bnRDaG9vc2VyP0VtYWlsPWd1aWxsYXVtZS5hdHRpYTkxQGdtYWlsLmNvbSZjb250
+aW51ZT1odHRwczovL215YWNjb3VudC5nb29nbGUuY29tL3NpZ25pbm9wdGlvbnMvcGhvbmUtc2ln
+bi1pbj9yZm4lM0QxMDIlMjZyZm5jJTNEMSUyNmVpZCUzRDEzMDc5MzAxNjg5NTc1OTIyNzglMjZl
+dCUzRDAlMjZhbmV4cCUzRGRjYXYyLWYxPg0KYXQgTXkgQWNjb3VudC4NCg0KKlVwZGF0ZSB5b3Vy
+IHJlY292ZXJ5IHBob25lIG51bWJlcioNCllvdXIgcmVjb3ZlcnkgcGhvbmUgaXMgdXNlZCB0byBy
+ZWFjaCB5b3Ugd2hlbiB5b3VyIHBob25lIGlzIG9mZmxpbmUsIGlmIHdlDQpkZXRlY3QgdW51c3Vh
+bCBhY3Rpdml0eSBpbiB5b3VyIGFjY291bnQgb3IgeW91IGFjY2lkZW50YWxseSBnZXQgbG9ja2Vk
+IG91dC4NCkNoZWNrIHRoYXQgeW91ciByZWNvdmVyeSBwaG9uZSBudW1iZXIgaXMgdXAgdG8gZGF0
+ZSBpbiB0aGUgQWNjb3VudCByZWNvdmVyeQ0Kb3B0aW9ucw0KPGh0dHBzOi8vYWNjb3VudHMuZ29v
+Z2xlLmNvbS9BY2NvdW50Q2hvb3Nlcj9FbWFpbD1ndWlsbGF1bWUuYXR0aWE5MUBnbWFpbC5jb20m
+Y29udGludWU9aHR0cHM6Ly9teWFjY291bnQuZ29vZ2xlLmNvbS9zaWduaW5vcHRpb25zL3Jlc2N1
+ZXBob25lP3JmbiUzRDEwMiUyNnJmbmMlM0QxJTI2ZWlkJTNEMTMwNzkzMDE2ODk1NzU5MjI3OCUy
+NmV0JTNEMCUyNmFuZXhwJTNEZGNhdjItZjE+DQphdCBNeSBBY2NvdW50Lg0KDQpGaW5kIG91dCBt
+b3JlIDxodHRwczovL3N1cHBvcnQuZ29vZ2xlLmNvbS9hY2NvdW50cy9hbnN3ZXIvNjM2MTAyNj4g
+YWJvdXQNCnVzaW5nIHlvdXIgcGhvbmUgdG8gc2lnbiBpbiBhbmQgdXBkYXRlDQo8aHR0cHM6Ly9h
+Y2NvdW50cy5nb29nbGUuY29tL0FjY291bnRDaG9vc2VyP0VtYWlsPWd1aWxsYXVtZS5hdHRpYTkx
+QGdtYWlsLmNvbSZjb250aW51ZT1odHRwczovL215YWNjb3VudC5nb29nbGUuY29tL3NpZ25pbm9w
+dGlvbnMvcGhvbmUtc2lnbi1pbj9yZm4lM0QxMDIlMjZyZm5jJTNEMSUyNmVpZCUzRDEzMDc5MzAx
+Njg5NTc1OTIyNzglMjZldCUzRDAlMjZhbmV4cCUzRGRjYXYyLWYxPg0KeW91ciBzZXR0aW5ncyBh
+bnkgdGltZS4NCllvdSByZWNlaXZlZCB0aGlzIGVtYWlsIHRvIGxldCB5b3Uga25vdyBhYm91dCBp
+bXBvcnRhbnQgY2hhbmdlcyB0byB5b3VyDQpHb29nbGUgQWNjb3VudCBhbmQgc2VydmljZXMuDQrC
+qSAyMDIwIEdvb2dsZSBMTEMsIDE2MDAgQW1waGl0aGVhdHJlIFBhcmt3YXksIE1vdW50YWluIFZp
+ZXcsIENBIDk0MDQzLCBVU0ENCg==
+--000000000000ab4e4e05a56406f2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html lang=3D"en"><head><meta name=3D"format-detection" cont=
+ent=3D"email=3Dno"/><meta name=3D"format-detection" content=3D"date=3Dno"/>=
+<style nonce=3D"uV/fvJ96ezcctbgaHGFuWg">.awl a {color: #FFFFFF; text-decora=
+tion: none;} .abml a {color: #000000; font-family: Roboto-Medium,Helvetica,=
+Arial,sans-serif; font-weight: bold; text-decoration: none;} .adgl a {color=
+: rgba(0, 0, 0, 0.87); text-decoration: none;} .afal a {color: #b0b0b0; tex=
+t-decoration: none;} @media screen and (min-width: 600px) {.v2sp {padding: =
+6px 30px 0px;} .v2rsp {padding: 0px 10px;}} @media screen and (min-width: 6=
+00px) {.mdv2rw {padding: 40px 40px;}} </style><link href=3D"//fonts.googlea=
+pis.com/css?family=3DGoogle+Sans" rel=3D"stylesheet" type=3D"text/css"/></h=
+ead><body style=3D"margin: 0; padding: 0;" bgcolor=3D"#FFFFFF"><table width=
+=3D"100%" height=3D"100%" style=3D"min-width: 348px;" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" lang=3D"en"><tr height=3D"32" style=3D"height: =
+32px;"><td></td></tr><tr align=3D"center"><td><div itemscope itemtype=3D"//=
+schema.org/EmailMessage"><div itemprop=3D"action" itemscope itemtype=3D"//s=
+chema.org/ViewAction"><link itemprop=3D"url" href=3D"https://accounts.googl=
+e.com/AccountChooser?Email=3Dguillaume.attia91@gmail.com&amp;continue=3Dhtt=
+ps://myaccount.google.com/signinoptions/phone-sign-in?rfn%3D102%26rfnc%3D1%=
+26eid%3D1307930168957592278%26et%3D0%26anexp%3Ddcav2-f1"/><meta itemprop=3D=
+"name" content=3D"Review Activity"/></div></div><table border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" style=3D"padding-bottom: 20px; max-width: 516p=
+x; min-width: 220px;"><tr><td width=3D"8" style=3D"width: 8px;"></td><td><d=
+iv style=3D"border-style: solid; border-width: thin; border-color:#dadce0; =
+border-radius: 8px; padding: 40px 20px;" align=3D"center" class=3D"mdv2rw">=
+<img src=3D"https://www.gstatic.com/images/branding/googlelogo/2x/googlelog=
+o_color_74x24dp.png" width=3D"74" height=3D"24" aria-hidden=3D"true" style=
+=3D"margin-bottom: 16px;" alt=3D"Google"><div style=3D"font-family: &#39;Go=
+ogle Sans&#39;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;border-bottom:=
+ thin solid #dadce0; color: rgba(0,0,0,0.87); line-height: 32px; padding-bo=
+ttom: 24px;text-align: center; word-break: break-word;"><div style=3D"font-=
+size: 24px;">You turned on &#39;Use your phone to sign in&#39;</div><table =
+align=3D"center" style=3D"margin-top:8px;"><tr style=3D"line-height: normal=
+;"><td align=3D"right" style=3D"padding-right:8px;"><img width=3D"20" heigh=
+t=3D"20" style=3D"width: 20px; height: 20px; vertical-align: sub; border-ra=
+dius: 50%;;" src=3D"https://lh3.googleusercontent.com/a-/AOh14Gg00fEHfTSq4e=
+p3jUmcaHs33Q-0lRYoGNZX7fzYLA=3Ds96" alt=3D""></td><td><a style=3D"font-fami=
+ly: &#39;Google Sans&#39;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;col=
+or: rgba(0,0,0,0.87); font-size: 14px; line-height: 20px;">guillaume.attia9=
+1@gmail.com</a></td></tr></table></div><div style=3D"font-family: Roboto-Re=
+gular,Helvetica,Arial,sans-serif; font-size: 14px; color: rgba(0,0,0,0.87);=
+ line-height: 20px;padding-top: 20px; text-align: left;">You can now sign i=
+n to your Google Account <a>guillaume.attia91@gmail.com</a> by tapping a pr=
+ompt on your phone.<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+style=3D"margin-top: 48px; margin-bottom: 48px;"><tr valign=3D"middle"><td =
+width=3D"32px"></td><td align=3D"center"><img src=3D"https://lh3.googleuser=
+content.com/a-/AOh14Gg00fEHfTSq4ep3jUmcaHs33Q-0lRYoGNZX7fzYLA=3Ds96" width=
+=3D"48px" height=3D"48px" style=3D"width: 48px; height: 48px; display: bloc=
+k; border-radius: 50%;"></td><td width=3D"16px"></td><td style=3D"line-heig=
+ht: 1.2;"><span style=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-s=
+erif;font-size: 20px; color: #202020;">Guillaume Attia</span><br><span styl=
+e=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-serif;font-size: 13px=
+; color: #727272;"><a>guillaume.attia91@gmail.com</a></span></td></tr><tr v=
+align=3D"middle"><td width=3D"32px" height=3D"24px"></td><td align=3D"cente=
+r" height=3D"24px"><img src=3D"https://www.gstatic.com/accountalerts/email/=
+down_arrow.png" width=3D"4px" height=3D"10px" style=3D"width: 4px; height: =
+10px; display: block; "></td></tr><tr valign=3D"top"><td width=3D"32px"></t=
+d><td align=3D"center"><img src=3D"https://www.gstatic.com/accountalerts/de=
+vicesrealistic/laptop_linux.png" width=3D"48px" height=3D"48px" style=3D"wi=
+dth: 48px; height: 48px; display: block; "></td><td width=3D"16px"></td><td=
+ style=3D"line-height: 1.2;"><span style=3D"font-family: Roboto-Regular,Hel=
+vetica,Arial,sans-serif; font-size: 16px; color: #202020;">Linux</span><br>=
+<span style=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-serif; font=
+-size: 13px; color: #727272;">Monday, 11 May 2020 21:05 (CET)<br>France*</s=
+pan></td></tr></table><b>Want to sign in with a different phone?</b><br>Go =
+to <a href=3D"https://accounts.google.com/AccountChooser?Email=3Dguillaume.=
+attia91@gmail.com&amp;continue=3Dhttps://myaccount.google.com/signinoptions=
+/phone-sign-in?rfn%3D102%26rfnc%3D1%26eid%3D1307930168957592278%26et%3D0%26=
+anexp%3Ddcav2-f1" style=3D"text-decoration: none; color: #4285F4;" target=
+=3D"_blank">Use your phone to sign in</a> at My Account.<br><br><b>Update y=
+our recovery phone number</b><br>Your recovery phone is used to reach you w=
+hen your phone is offline, if we detect unusual activity in your account or=
+ you accidentally get locked out. Check that your recovery phone number is =
+up to date in the <a href=3D"https://accounts.google.com/AccountChooser?Ema=
+il=3Dguillaume.attia91@gmail.com&amp;continue=3Dhttps://myaccount.google.co=
+m/signinoptions/rescuephone?rfn%3D102%26rfnc%3D1%26eid%3D130793016895759227=
+8%26et%3D0%26anexp%3Ddcav2-f1" style=3D"text-decoration: none; color: #4285=
+F4;" target=3D"_blank">Account recovery options</a> at My Account.<br><br><=
+a href=3D"https://support.google.com/accounts/answer/6361026" data-meta-key=
+=3D"help" style=3D"text-decoration: none; color: #4285F4;" target=3D"_blank=
+">Find out more</a> about using your phone to sign in and <a href=3D"https:=
+//accounts.google.com/AccountChooser?Email=3Dguillaume.attia91@gmail.com&am=
+p;continue=3Dhttps://myaccount.google.com/signinoptions/phone-sign-in?rfn%3=
+D102%26rfnc%3D1%26eid%3D1307930168957592278%26et%3D0%26anexp%3Ddcav2-f1" st=
+yle=3D"text-decoration: none; color: #4285F4;" target=3D"_blank">update</a>=
+ your settings any time.</div></div><div style=3D"text-align: left;"><div s=
+tyle=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-serif;color: rgba(=
+0,0,0,0.54); font-size: 11px; line-height: 18px; padding-top: 12px; text-al=
+ign: center;"><div>You received this email to let you know about important =
+changes to your Google Account and services.</div><div style=3D"direction: =
+ltr;">&copy; 2020 Google LLC, <a class=3D"afal" style=3D"font-family: Robot=
+o-Regular,Helvetica,Arial,sans-serif;color: rgba(0,0,0,0.54); font-size: 11=
+px; line-height: 18px; padding-top: 12px; text-align: center;">1600 Amphith=
+eatre Parkway, Mountain View, CA 94043, USA</a></div></div></div></td><td w=
+idth=3D"8" style=3D"width: 8px;"></td></tr></table></td></tr><tr height=3D"=
+32" style=3D"height: 32px;"><td></td></tr></table></body></html>
+--000000000000ab4e4e05a56406f2--

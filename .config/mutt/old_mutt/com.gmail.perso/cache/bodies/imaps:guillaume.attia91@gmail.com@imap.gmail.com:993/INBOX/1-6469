@@ -1,0 +1,212 @@
+Delivered-To: guillaume.attia91@gmail.com
+Received: by 2002:a5e:a80a:0:0:0:0:0 with SMTP id c10csp993465ioa;
+        Tue, 5 May 2020 05:11:21 -0700 (PDT)
+X-Google-Smtp-Source: APiQypIfujL9zjy1kBRerJKHA7SYJtc7GfyZstnK3sYAwcWCV5n9GGcsNLW97B4QyeLOnfv3ttgc
+X-Received: by 2002:a1c:e408:: with SMTP id b8mr3074002wmh.68.1588680681120;
+        Tue, 05 May 2020 05:11:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1588680681; cv=none;
+        d=google.com; s=arc-20160816;
+        b=RccghNdAr4aLWj6ciO2/7JxPORTNud9rQOrT3Jkrlk96tmxBnUtatTYkA1ncG63piY
+         CchwzAT6epPQprYPyKcIFKJTFJzf9/65lKq8ufL9mgOO//NQzIBayO9s6FYfEZsbBmcQ
+         bMxCm2PHvbBNY0blUWq0WUEqV9YvuSL+GzsEYjFA3UMxmUEjWnaVBRA/6zoltXfdW0Ft
+         8fMcBEGc+JFe/8khyeSl7LC6OU0Dmv8EmKLmowGsDwUv0+w8NYVscevje8bBFalEDEzw
+         vwCiWrBCERpiVQRjM34kJxAZT5WVi9Hte+KAiI4mLIQVNvKdAyEQ7LCypsw0qzsoT1lL
+         ZhUw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:feedback-id:list-unsubscribe:list-unsubscribe-post
+         :date:subject:to:from:message-id:dkim-signature:dkim-signature;
+        bh=Qt+T+pkZL2GIJi97/W2Cq8JMaXNyi7pevqaJpR7qUdk=;
+        b=YYyOaQ7jdBr58K/TCZidLaaT8bORu+nUW/uOI/77WxM5CaWEmJD3b8HFTH2e7XnobF
+         rduBFgeCM2bGuf1gmiu0BCIINwxkakJUX9AOrdrG28h7KA9RySsBYuBcYZm2gx4THRak
+         ptcEx6mgjNkcFObQtp6upW/ocCGupqH2gStAFI/ZFQMpI891sc4v3KsWiEGnwW6ustJl
+         dad61IPrghHGZ/g4piL6tdpcozUZVqhW641C96AxozeHXxtfVv2VfBFt8NS9XsT/dfkk
+         FLToY45tvNHb1XTlESA70DAdzitUt91BglmU85JFuoVn4PErdX3NaVWYL8cxiLJiJ7fF
+         hQgw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@doctolib.fr header.s=mailjet header.b=XhrfweP4;
+       dkim=pass header.i=@bnc3.mailjet.com header.s=mailjet header.b=O22gPs1V;
+       spf=pass (google.com: domain of 2bb776fb.baaaamn381waaaaaaaaaaasarwaaaaaachuaaaaaaasbzabesvfo@bnc3.doctolib.com designates 185.189.238.116 as permitted sender) smtp.mailfrom=2bb776fb.BAAAAMn381wAAAAAAAAAAASarwAAAAAAChUAAAAAAAsBzABesVfo@bnc3.doctolib.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=doctolib.fr
+Return-Path: <2bb776fb.BAAAAMn381wAAAAAAAAAAASarwAAAAAAChUAAAAAAAsBzABesVfo@bnc3.doctolib.com>
+Received: from o116.p27.mailjet.com (o116.p27.mailjet.com. [185.189.238.116])
+        by mx.google.com with ESMTPS id 89si1825051wrj.474.2020.05.05.05.11.20
+        for <guillaume.attia91@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Tue, 05 May 2020 05:11:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 2bb776fb.baaaamn381waaaaaaaaaaasarwaaaaaachuaaaaaaasbzabesvfo@bnc3.doctolib.com designates 185.189.238.116 as permitted sender) client-ip=185.189.238.116;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@doctolib.fr header.s=mailjet header.b=XhrfweP4;
+       dkim=pass header.i=@bnc3.mailjet.com header.s=mailjet header.b=O22gPs1V;
+       spf=pass (google.com: domain of 2bb776fb.baaaamn381waaaaaaaaaaasarwaaaaaachuaaaaaaasbzabesvfo@bnc3.doctolib.com designates 185.189.238.116 as permitted sender) smtp.mailfrom=2bb776fb.BAAAAMn381wAAAAAAAAAAASarwAAAAAAChUAAAAAAAsBzABesVfo@bnc3.doctolib.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=doctolib.fr
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; q=dns/txt;
+  d=doctolib.fr; i=no-reply@doctolib.fr; s=mailjet;
+  h=message-id:from:to:subject:date:list-unsubscribe-post:list-unsubscribe:
+  feedback-id:x-csa-complaints:x-doctolib-canal-tracker-id:x-mj-mid:
+  x-report-abuse-to:mime-version:content-type;
+  bh=YD90VjXXvzy6qrUvRvxjuyVIpLpSp1ovvH6XTk+/v4E=;
+  b=XhrfweP4IrB9E6f0aUuiIv7TXjpg8s8wzu/i3j5afLI82ZLbeAoPpWp8V
+ MHtaMzzQiA2W0vwZBkEOJvpDt5QMemGgImVx3gGJKhK99ktQDugxwboWXpz3
+ NxDSJez1bone6dOSmrd89rWU+Q8qfs6b74pWaCqRskrR0UnDWJYRmM=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; q=dns/txt;
+  d=bnc3.mailjet.com; s=mailjet;
+  h=message-id:from:to:subject:date:list-unsubscribe-post:list-unsubscribe:
+  feedback-id:x-csa-complaints:x-doctolib-canal-tracker-id:x-mj-mid:
+  x-report-abuse-to:mime-version:content-type;
+  bh=YD90VjXXvzy6qrUvRvxjuyVIpLpSp1ovvH6XTk+/v4E=;
+  b=O22gPs1VhBLWzPqutZ3W6E+jHkxpLZ00phdWLGBt8L46PEsXj+ugwEck3
+ 4dZDBE4Yf8ZLkx5xoI4dvZHm/BNEWeD0rawepgi2pAT9S1dVVsP1SB0akgWP
+ /ufPtgU6/9doyIgkOQ/RJmK+HtJ12XD2gzd7gER16fiUZyPfePTkWs=
+Message-Id: <2bb776fb.BAAAAMn381wAAAAAAAAAAASarwAAAAAAChUAAAAAAAsBzABesVfo@mailjet.com>
+From: Doctolib <no-reply@doctolib.fr>
+To: guillaume.attia91@gmail.com
+Subject: M. Arthur Nau vous propose de reprendre rendez-vous
+Date: Tue, 5 May 2020 12:11:20 +0000
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe:
+	<mailto:unsub-2bb776fb.7jtm.vps663j4yyjk@bnc3.mailjet.com>,
+	<https://mj.doctolib.com/unsub2?m=BAAAAMn381wAAAAAAAAAAASarwAAAAAAChUAAAAAAAsBzABesVfobrWltrD7RFSpchviDSGW8wALEMg&b=2bb776fb&e=9f3a884c&x=ppSpNKXEY0c_6eAuc3C1pN6p2_gCYfd8SJYSZNFZ1kE>
+Feedback-Id: 1207698488.721356.725192:MJ
+X-CSA-Complaints: whitelist-complaints@eco.de
+X-Doctolib-Canal-Tracker-ID: 1207698488
+X-MJ-Mid:
+	BAAAAMn381wAAAAAAAAAAASarwAAAAAAChUAAAAAAAsBzABesVfobrWltrD7RFSpchviDSGW8wALEMg
+X-REPORT-ABUSE-TO: Message sent by Mailjet please report to
+	abuse@mailjet.com with a copy of the message
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=-+wDD7YLU335Fja4phqH+"
+
+--=-+wDD7YLU335Fja4phqH+
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Ch=C3=A8re patiente, cher patient,
+J=E2=80=99esp=C3=A8re que vous et vos proches allez bien.
+Je me permets de vous contacter car vous aviez effectu=C3=A9 une
+consultation =C3=A0 mon cabinet avant l=E2=80=99=C3=A9pid=C3=A9mie de COVID=
+-19.
+Aussi, je vous annonce que vous pouvez reprendre rendez-vous d=C3=A8s
+=C3=A0 pr=C3=A9sent si vous le souhaitez. Vous devrez choisir entre deux
+types de consultation sur Doctolib : * La consultation vid=C3=A9o, qui
+vous permet d'effectuer la consultation depuis chez vous, via
+votre smartphone ou votre ordinateur.
+* La consultation =C3=A0 mon cabinet : j=E2=80=99ai fait tout le n=C3=A9ces=
+saire
+afin de vous recevoir dans les meilleures conditions.
+
+PRENDRE RENDEZ-VOUS=20
+( http://www.doctolib.fr/masseur-kinesitherapeute/paris/arthur-nau?utm_camp=
+aign=3Dbtn_appointment_in_last_6_months&utm_medium=3Demail&utm_source=3Ddoc=
+tolib )
+
+Si vous r=C3=A9servez une consultation physique, voici les consignes =C3=A0
+respecter au sein du cabinet :
+
+* Venez sans accompagnement, ou au maximum avec une personne.
+* Soyez ponctuel afin de passer le moins de temps possible en
+salle d'attente.
+* Respectez une distance minimale d'un m=C3=A8tre avec toute autre
+personne.
+* Lavez-vous les mains avant et apr=C3=A8s votre consultation.
+
+Bien cordialement,
+Nau Arthur
+
+Conform=C3=A9ment =C3=A0 la Loi Informatique et Libert=C3=A9s, vous dispose=
+z
+d'un droit d'acc=C3=A8s et de rectification des donn=C3=A9es vous
+concernant. Si vous ne souhaitez plus recevoir de message de
+Doctolib, cliquez ici=20
+( http://www.doctolib.fr/account/opt_outs/6143502/unsubscribe_doctor_commun=
+ication_alerts?doctor=3D9886465&token=3Dakl5dVh5RjR2ZDd6M1dOSVdiSzE1TEVwV0l=
+BazhtOGd6SkZzTEdjZ2lKZzloa0pSLzd1dEtUTXNabExtYTVmWjN6WWFpRlY5SFFiTkV6RVhFSl=
+c5MVZiVW1OaVFEdHdhTkloNUxPNEVFSUd2dXNxdnM0bDdaRUx5aGd3ZklIcHYtLU9nQmF4YTBzT=
+jlheU4ycGFySmYxUHc9PQ%3D%3D--10426cd5672edd3597b26d48071f1617684574e7&utm_c=
+ampaign=3Dbtn_appointment_in_last_6_months&utm_medium=3Demail&utm_source=3D=
+doctolib )
+.=
+
+--=-+wDD7YLU335Fja4phqH+
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html><head data-country=3D"fr" data-env=3D"production"><met=
+a content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Type" /><tit=
+le>Doctolib</title><style type=3D"text/css">a {
+  text-decoration: none;
+  color: #0596de;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #EEF2F6;
+}</style></head><body bgcolor=3D"#EEF2F6" leftmargin=3D"0" marginheight=3D"=
+0" marginwidth=3D"0" style=3D"font-family: Arial, sans-serif" topmargin=3D"=
+0"><table align=3D"center" bgcolor=3D"#EEF2F6" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" width=3D"100%"><tr height=3D"14"><td></td><td></td><td=
+></td></tr><tr><td width=3D"14"></td><td align=3D"center"><table width=3D"1=
+00%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 6=
+50px;"><tr><td><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%"><tr align=3D"center"><td><table bgcolor=3D"#FFFFFF" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 650px; border-radi=
+us:8px 8px 4px 4px" width=3D"100%"><tr><td background=3D"https://www.doctol=
+ib.fr/email_layout/top-banner.png" height=3D"63" style=3D"background-size: =
+cover; border-radius: 8px 8px 0 0"></td></tr><tr><td><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"22"><tr><td align=3D"center"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"14" style=3D"line-height:24px; font=
+-size: 14px; color: #435F71;"><tr><td>Ch=C3=A8re patiente, cher patient,</t=
+d></tr><tr><td>J=E2=80=99esp=C3=A8re que vous et vos proches allez bien.</t=
+d></tr><tr><td>Je me permets de vous contacter car vous aviez effectu=C3=A9=
+ une consultation =C3=A0 mon cabinet avant l=E2=80=99=C3=A9pid=C3=A9mie de =
+COVID-19.</td></tr><tr><td>Aussi, <strong>je vous annonce que vous pouvez r=
+eprendre rendez-vous d=C3=A8s =C3=A0 pr=C3=A9sent</strong> si vous le souha=
+itez. Vous devrez choisir entre deux types de consultation sur Doctolib : <=
+ul>
+  <li>La consultation vid=C3=A9o, qui vous permet d'effectuer la consultati=
+on depuis chez vous, via votre smartphone ou votre ordinateur.</li>
+  <li>La consultation =C3=A0 mon cabinet : j=E2=80=99ai fait tout le n=C3=
+=A9cessaire afin de vous recevoir dans les meilleures conditions.</li>
+</ul>
+</td></tr><tr><td align=3D"center"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" style=3D"display:inline-block; margin:7px;" width=3D"264"><=
+tr align=3D"center"><td align=3D"center" bgcolor=3D"#0596DE" height=3D"44" =
+style=3D"border-radius:4px; background-color:#0596DE;" valign=3D"center" wi=
+dth=3D"264"><a style=3D"display:block; text-decoration:none; line-height:44=
+px; color:#FFFFFF;" href=3D"https://mj.doctolib.com/lnk/BAAAAMn381wAAAAAAAA=
+AAASarwAAAAAAChUAAAAAAAsBzABesVfobrWltrD7RFSpchviDSGW8wALEMg/1/4GCJ-nggufeR=
+kfQFOMJkcA/aHR0cDovL3d3dy5kb2N0b2xpYi5mci9tYXNzZXVyLWtpbmVzaXRoZXJhcGV1dGUv=
+cGFyaXMvYXJ0aHVyLW5hdT91dG1fY2FtcGFpZ249YnRuX2FwcG9pbnRtZW50X2luX2xhc3RfNl9=
+tb250aHMmdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWRvY3RvbGli">PRENDRE RENDEZ-V=
+OUS</a></td></tr></table></td></tr><tr><td>Si vous r=C3=A9servez une consul=
+tation physique, voici les consignes =C3=A0 respecter au sein du cabinet :<=
+/td></tr><tr><td><ul>
+  <li>Venez sans accompagnement, ou au maximum avec une personne.</li>
+  <li>Soyez ponctuel afin de passer le moins de temps possible en salle d'a=
+ttente.</li>
+  <li>Respectez une distance minimale d'un m=C3=A8tre avec toute autre pers=
+onne.</li>
+  <li>Lavez-vous les mains avant et apr=C3=A8s votre consultation.</li>
+</ul>
+</td></tr><tr><td>Bien cordialement,</td></tr><tr><td>Nau Arthur</td></tr><=
+/table></td></tr></table></td></tr></table><table border=3D"0" cellpadding=
+=3D"22" cellspacing=3D"0"><tr align=3D"center" style=3D"font-style: italic;=
+ font-size: 12px; color: #435F71;"><td>Conform=C3=A9ment =C3=A0 la Loi Info=
+rmatique et Libert=C3=A9s, vous disposez d'un droit d'acc=C3=A8s et de rect=
+ification des donn=C3=A9es vous concernant. Si vous ne souhaitez plus recev=
+oir de message de Doctolib, <a href=3Dhttp://www.doctolib.fr/account/opt_ou=
+ts/6143502/unsubscribe_doctor_communication_alerts?doctor=3D9886465&amp;tok=
+en=3Dakl5dVh5RjR2ZDd6M1dOSVdiSzE1TEVwV0lBazhtOGd6SkZzTEdjZ2lKZzloa0pSLzd1dE=
+tUTXNabExtYTVmWjN6WWFpRlY5SFFiTkV6RVhFSlc5MVZiVW1OaVFEdHdhTkloNUxPNEVFSUd2d=
+XNxdnM0bDdaRUx5aGd3ZklIcHYtLU9nQmF4YTBzTjlheU4ycGFySmYxUHc9PQ%3D%3D--10426c=
+d5672edd3597b26d48071f1617684574e7&amp;utm_campaign=3Dbtn_appointment_in_la=
+st_6_months&amp;utm_medium=3Demail&amp;utm_source=3Ddoctolib style=3D"text-=
+decoration: underline;">cliquez ici</a>.
+</td></tr></table></td></tr><tr><td height=3D"10"></td></tr></table></td></=
+tr></table></td><td width=3D"14"></td></tr></table>
+<br/><img src=3D"https://mj.doctolib.com/oo/BAAAAMn381wAAAAAAAAAAASarwAAAAA=
+AChUAAAAAAAsBzABesVfobrWltrD7RFSpchviDSGW8wALEMg/99037e57/e.gif" height=3D"=
+1" width=3D"1" alt=3D"" border=3D"0" style=3D"height:1px;width:1px;border:0=
+;"/>
+</body></html>=
+
+--=-+wDD7YLU335Fja4phqH+--

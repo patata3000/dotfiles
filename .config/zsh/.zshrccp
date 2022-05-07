@@ -1,0 +1,1 @@
+fpath+=${ZDOTDIR:-~}/.zsh_functions extra/completions/_alacritty /home/guillaume/.config/zsh/.zsh_functions/_alacritty

@@ -1,0 +1,418 @@
+Delivered-To: guillaume.attia91@gmail.com
+Received: by 2002:a5e:8a44:0:0:0:0:0 with SMTP id o4csp3219457iom;
+        Mon, 13 Apr 2020 00:28:59 -0700 (PDT)
+X-Google-Smtp-Source: APiQypLY67SlGZpobmnzkXfdywvguOsVaq7fBpakwWfQAwSdnUfz7V7t8eUOVTr281YBAq8dug2W
+X-Received: by 2002:a92:3501:: with SMTP id c1mr15420465ila.91.1586762939424;
+        Mon, 13 Apr 2020 00:28:59 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1586762939; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Vo9bbRQsVdengi3p5wx2GPOf1T+sFggWsNZ8rNjSqNKsQ2HxIHHBLiiCCy0WyOjz4m
+         faWN/hvm9AH/wQqY3qzgxcW6y40NIV1tabYB5iEq5/Br+0Q3/6mLsPSgjcWKVQmkvxcK
+         j8qXgXL+GietyUg2GHH8rrY7VGPH1slabdTWWXRkNqExfhhWe5KYTKnxGEKvPQAIYMWj
+         c7ka/94ciSh7A/tpm5RN/Q8poTB+blno0CPZlmOuVbOyU9N5Zz0XQufdbYTuT2VRjNTO
+         ULFqiKNvyrSSUcTVf7YrSibaa7P7Q0U/FZl3ZwkrS2q7MfpwZdCJoiRKfOBmxYTtI3Kj
+         /S/A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature;
+        bh=PHxD9TJiOAfeHP9yLVq5DHiQaGNBbBZkJ65tE0z/v9g=;
+        b=ykmZhGLnUMukMJQUQTIKCVuxKrsPLlQUS+N2a17TVBWAId7yeKNmRm1BTOECyon+Ti
+         NnaWGO/cG04AqFm6I3bN3eIGUZwAvnLtSE1GE+7UMxybZdvtPSsbSuCetZC825uDMUuR
+         OWnPCzT767RNoZIEHYhFYdGeV26bFib9nwFT6j4IZMOMJQ+3qjCalQ7SExVsrA7NFLoX
+         aCpn/fb/WRa1mMb9txhKko+P6WCtI4zBGdT5M4m5BaJCGhUp+JSrNHznNkYn67T35SFO
+         gv1Oqm7nvJ4E1d5ovsweayieeqL196ZA9zmArhHWCEJdB6AWucd1XiD0ZAUeNVf+gm68
+         ctDw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@shopify.com header.s=mail header.b=sQTfFI9T;
+       spf=pass (google.com: domain of contact@ergodox-ez.com designates 104.198.207.207 as permitted sender) smtp.mailfrom=contact@ergodox-ez.com
+Return-Path: <contact@ergodox-ez.com>
+Received: from smtp2.shopify.com (smtp2.shopify.com. [104.198.207.207])
+        by mx.google.com with ESMTPS id a17si7679650iok.17.2020.04.13.00.28.59
+        for <guillaume.attia91@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 13 Apr 2020 00:28:59 -0700 (PDT)
+Received-SPF: pass (google.com: domain of contact@ergodox-ez.com designates 104.198.207.207 as permitted sender) client-ip=104.198.207.207;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@shopify.com header.s=mail header.b=sQTfFI9T;
+       spf=pass (google.com: domain of contact@ergodox-ez.com designates 104.198.207.207 as permitted sender) smtp.mailfrom=contact@ergodox-ez.com
+X-Path-Id: 1287E1B78E1
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=shopify.com; s=mail;
+	t=1586762939; bh=BdMd5TS0Gzh+ilYMCpJn8rkiUAQlCkljrOsl6qHH+5I=;
+	h=Date:From:To:Message-ID:Subject;
+	b=sQTfFI9TCBXenb+yZcxQf/VUrARQCSPk6nr8YIMsbo0xrQw18ajoqTZrNRFPYL7zR
+	 ee1Fri0xzSG49eteF48V5tsRmtNBB2NBsHqLct6WKMVcBfxDc0Wdq57Po+TLwIlO0U
+	 DIfmpIVgxOjhGyg2az6kiui72KJ947S9vXHt0vHY=
+X-Path-Id: B21252A0004
+Date: Mon, 13 Apr 2020 07:28:58 +0000
+From: ZSA Technology Labs <contact@ergodox-ez.com>
+To: guillaume.attia91@gmail.com
+Message-ID: <5e9414baaaef0_adfd4fc48121@shopify.com>
+Subject: A shipment from order SHO-#27001 is on the way
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5e9414baaaa84_adfd4fc480b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Arrive: R1V5aDdBQjdhMkNGQUtDWHUxdHkxM1dMdHU5U3JINEY3UVNydXpzcmZSUVlMbWZPNmdyRFhNZFZNN2RHZVlmaW5LdW9Rb3kvamtPYkNVeUtBZ0F0OE1IZVBHNHZqUDRNWjM4RnBSbG1KN3RZcTNpQzkxdU93NUFXcDZMcWxaSlZKaDJvWTZsZzBQQTVCc3Awd2NNOFhKdjl2TlpCek9xZW1DN1J2QzZFbThiY3ZDK3VWRlhPT2ZqeDBpVG9ZZGw5NDZGZVEwTklqTm1TVmoyRDMrRW56TUpCSTA2TjNlbHZuZ2hDYWErN0NRVU5CM0t6OXBNZWJsYjNRcWpkR3p5Ty0tZmp2NExtQlp4QjhOTmZvbG1CbEZUQT09--2d95d2fb840014de002907cf48de2edb0e253a6c
+
+
+----==_mimepart_5e9414baaaa84_adfd4fc480b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+**********************************************=0D
+ZSA Technology Labs ( https://ergodox-ez.com )=0D
+**********************************************=0D
+=0D
+Order SHO-#27001=0D
+=0D
+------------------------=0D
+Your order is on the way=0D
+------------------------=0D
+=0D
+Your order is on the way to you. Track your shipment=0D
+to see the delivery status.=0D
+=0D
+View your order =0D
+( https://ergodox-ez.com/11523264/orders/0d094c16f6e74cbbaaa99e4394be0cbd=
+/authenticate?key=3D8155d4defe66fea92f226b9941b585bc )=0D
+=0D
+=0D
+Items in this shipment=0D
+----------------------=0D
+=0D
+ErgoDox EZ Original Standalone =C3=97 1=0D
+=0D
+Blank / Black / Cherry MX Brown=0D
+=0D
+If you have any questions, reply to this email or=0D
+contact us at contact@ergodox-ez.com=
+
+----==_mimepart_5e9414baaaa84_adfd4fc480b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html lang=3D"en">=0D
+  <head>=0D
+  <title>Your order is on the way</title>=0D
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">=0D
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width">=0D
+  =0D
+  =0D
+<style>body {=0D
+margin: 0;=0D
+}=0D
+h1 a:hover {=0D
+font-size: 30px; color: #333;=0D
+}=0D
+h1 a:active {=0D
+font-size: 30px; color: #333;=0D
+}=0D
+h1 a:visited {=0D
+font-size: 30px; color: #333;=0D
+}=0D
+a:hover {=0D
+text-decoration: none;=0D
+}=0D
+a:active {=0D
+text-decoration: none;=0D
+}=0D
+a:visited {=0D
+text-decoration: none;=0D
+}=0D
+.button__text:hover {=0D
+color: #fff; text-decoration: none;=0D
+}=0D
+.button__text:active {=0D
+color: #fff; text-decoration: none;=0D
+}=0D
+.button__text:visited {=0D
+color: #fff; text-decoration: none;=0D
+}=0D
+a:hover {=0D
+color: #1990C6;=0D
+}=0D
+a:active {=0D
+color: #1990C6;=0D
+}=0D
+a:visited {=0D
+color: #1990C6;=0D
+}=0D
+@media (max-width: 600px) {=0D
+  .container {=0D
+    width: 94% !important;=0D
+  }=0D
+  .main-action-cell {=0D
+    float: none !important; margin-right: 0 !important;=0D
+  }=0D
+  .secondary-action-cell {=0D
+    text-align: center; width: 100%;=0D
+  }=0D
+  .header {=0D
+    margin-top: 20px !important; margin-bottom: 2px !important;=0D
+  }=0D
+  .shop-name__cell {=0D
+    display: block;=0D
+  }=0D
+  .order-number__cell {=0D
+    display: block; text-align: left !important; margin-top: 20px;=0D
+  }=0D
+  .button {=0D
+    width: 100%;=0D
+  }=0D
+  .or {=0D
+    margin-right: 0 !important;=0D
+  }=0D
+  .apple-wallet-button {=0D
+    text-align: center;=0D
+  }=0D
+  .customer-info__item {=0D
+    display: block; width: 100% !important;=0D
+  }=0D
+  .spacer {=0D
+    display: none;=0D
+  }=0D
+  .subtotal-spacer {=0D
+    display: none;=0D
+  }=0D
+}=0D
+</style>=0D
+</head>=0D
+=0D
+  <body style=3D"margin: 0;">=0D
+=0D
+    <table class=3D"body" style=3D"height: 100% !important; width: 100% !=
+important; border-spacing: 0; border-collapse: collapse;">=0D
+      <tr>=0D
+        <td style=3D'font-family: -apple-system, BlinkMacSystemFont, "Seg=
+oe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sa=
+ns", "Helvetica Neue", sans-serif;'>=0D
+          <table class=3D"header row" style=3D"width: 100%; border-spacin=
+g: 0; border-collapse: collapse; margin: 40px 0 20px;">=0D
+  <tr>=0D
+    <td class=3D"header__cell" style=3D'font-family: -apple-system, Blink=
+MacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fi=
+ra Sans", "Droid Sans", "Helvetica Neue", sans-serif;'>=0D
+      <center>=0D
+=0D
+        <table class=3D"container" style=3D"width: 560px; text-align: lef=
+t; border-spacing: 0; border-collapse: collapse; margin: 0 auto;">=0D
+          <tr>=0D
+            <td style=3D'font-family: -apple-system, BlinkMacSystemFont, =
+"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droi=
+d Sans", "Helvetica Neue", sans-serif;'>=0D
+=0D
+              <table class=3D"row" style=3D"width: 100%; border-spacing: =
+0; border-collapse: collapse;">=0D
+                <tr>=0D
+                  <td class=3D"shop-name__cell" style=3D'font-family: -ap=
+ple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",=
+ "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;'>=0D=
+
+                      <h1 class=3D"shop-name__text" style=3D"font-weight:=
+ normal; font-size: 30px; color: #333; margin: 0;">=0D
+                        <a href=3D"https://ergodox-ez.com" style=3D"font-=
+size: 30px; color: #333; text-decoration: none;">ZSA Technology Labs</a>=0D=
+
+                      </h1>=0D
+                  </td>=0D
+=0D
+                    <td class=3D"order-number__cell" style=3D'font-family=
+: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubu=
+ntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-seri=
+f; text-transform: uppercase; font-size: 14px; color: #999;' align=3D"rig=
+ht">=0D
+                      <span class=3D"order-number__text" style=3D"font-si=
+ze: 16px;">=0D
+                        Order SHO-#27001=0D
+                      </span>=0D
+                    </td>=0D
+                </tr>=0D
+              </table>=0D
+=0D
+            </td>=0D
+          </tr>=0D
+        </table>=0D
+=0D
+      </center>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+          <table class=3D"row content" style=3D"width: 100%; border-spaci=
+ng: 0; border-collapse: collapse;">=0D
+  <tr>=0D
+    <td class=3D"content__cell" style=3D'font-family: -apple-system, Blin=
+kMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "F=
+ira Sans", "Droid Sans", "Helvetica Neue", sans-serif; padding-bottom: 40=
+px;'>=0D
+      <center>=0D
+        <table class=3D"container" style=3D"width: 560px; text-align: lef=
+t; border-spacing: 0; border-collapse: collapse; margin: 0 auto;">=0D
+          <tr>=0D
+            <td style=3D'font-family: -apple-system, BlinkMacSystemFont, =
+"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droi=
+d Sans", "Helvetica Neue", sans-serif;'>=0D
+              =0D
+            <h2 style=3D"font-weight: normal; font-size: 24px; margin: 0 =
+0 10px;">Your order is on the way</h2>=0D
+            <p style=3D"color: #777; line-height: 150%; font-size: 16px; =
+margin: 0;">Your order is on the way to you. Track your shipment to see t=
+he delivery status.</p>=0D
+            =0D
+            =0D
+              <table class=3D"row actions" style=3D"width: 100%; border-s=
+pacing: 0; border-collapse: collapse; margin-top: 20px;">=0D
+  <tr>=0D
+    <td class=3D"actions__cell" style=3D'font-family: -apple-system, Blin=
+kMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "F=
+ira Sans", "Droid Sans", "Helvetica Neue", sans-serif;'>=0D
+      <table class=3D"button main-action-cell" style=3D"border-spacing: 0=
+; border-collapse: collapse; float: left; margin-right: 15px;">=0D
+        <tr>=0D
+          <td class=3D"button__cell" style=3D'font-family: -apple-system,=
+ BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell=
+", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; border-radius=
+: 4px;' align=3D"center" bgcolor=3D"#1990C6"><a href=3D"https://ergodox-e=
+z.com/11523264/orders/0d094c16f6e74cbbaaa99e4394be0cbd/authenticate?key=3D=
+8155d4defe66fea92f226b9941b585bc" class=3D"button__text" style=3D"font-si=
+ze: 16px; text-decoration: none; display: block; color: #fff; padding: 20=
+px 25px;">View your order</a></td>=0D
+        </tr>=0D
+      </table>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+            =0D
+=0D
+            </td>=0D
+          </tr>=0D
+        </table>=0D
+      </center>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+          <table class=3D"row section" style=3D"width: 100%; border-spaci=
+ng: 0; border-collapse: collapse; border-top-width: 1px; border-top-color=
+: #e5e5e5; border-top-style: solid;">=0D
+  <tr>=0D
+    <td class=3D"section__cell" style=3D'font-family: -apple-system, Blin=
+kMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "F=
+ira Sans", "Droid Sans", "Helvetica Neue", sans-serif; padding: 40px 0;'>=
+=0D
+      <center>=0D
+        <table class=3D"container" style=3D"width: 560px; text-align: lef=
+t; border-spacing: 0; border-collapse: collapse; margin: 0 auto;">=0D
+          <tr>=0D
+            <td style=3D'font-family: -apple-system, BlinkMacSystemFont, =
+"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droi=
+d Sans", "Helvetica Neue", sans-serif;'>=0D
+              <h3 style=3D"font-weight: normal; font-size: 20px; margin: =
+0 0 25px;">Items in this shipment</h3>=0D
+            </td>=0D
+          </tr>=0D
+        </table>=0D
+        <table class=3D"container" style=3D"width: 560px; text-align: lef=
+t; border-spacing: 0; border-collapse: collapse; margin: 0 auto;">=0D
+          <tr>=0D
+            <td style=3D'font-family: -apple-system, BlinkMacSystemFont, =
+"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droi=
+d Sans", "Helvetica Neue", sans-serif;'>=0D
+              =0D
+            =0D
+<table class=3D"row" style=3D"width: 100%; border-spacing: 0; border-coll=
+apse: collapse;">=0D
+  =0D
+  <tr class=3D"order-list__item" style=3D"width: 100%;">=0D
+    <td class=3D"order-list__item__cell" style=3D'font-family: -apple-sys=
+tem, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Canta=
+rell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;'>=0D
+      <table style=3D"border-spacing: 0; border-collapse: collapse;">=0D
+        <td style=3D'font-family: -apple-system, BlinkMacSystemFont, "Seg=
+oe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sa=
+ns", "Helvetica Neue", sans-serif;'>=0D
+          =0D
+            <img src=3D"https://cdn.shopify.com/s/files/1/1152/3264/produ=
+cts/ada3ebfea80525695f04b2c09790efad_compact_cropped.jpg?v=3D1492776796" =
+align=3D"left" width=3D"60" height=3D"60" class=3D"order-list__product-im=
+age" style=3D"margin-right: 15px; border-radius: 8px; border: 1px solid #=
+e5e5e5;">=0D
+          =0D
+        </td>=0D
+        <td class=3D"order-list__product-description-cell" style=3D'font-=
+family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen"=
+, "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", san=
+s-serif; width: 100%;'>=0D
+          =0D
+=0D
+          =0D
+=0D
+          <span class=3D"order-list__item-title" style=3D"font-size: 16px=
+; font-weight: 600; line-height: 1.4; color: #555;">ErgoDox EZ Original S=
+tandalone =C3=97 1</span><br>=0D
+=0D
+          =0D
+            <span class=3D"order-list__item-variant" style=3D"font-size: =
+14px; color: #999;">Blank / Black / Cherry MX Brown</span>=0D
+          =0D
+        </td>=0D
+      </table>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+=0D
+            </td>=0D
+          </tr>=0D
+        </table>=0D
+      </center>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+          <table class=3D"row footer" style=3D"width: 100%; border-spacin=
+g: 0; border-collapse: collapse; border-top-width: 1px; border-top-color:=
+ #e5e5e5; border-top-style: solid;">=0D
+  <tr>=0D
+    <td class=3D"footer__cell" style=3D'font-family: -apple-system, Blink=
+MacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fi=
+ra Sans", "Droid Sans", "Helvetica Neue", sans-serif; padding: 35px 0;'>=0D=
+
+      <center>=0D
+        <table class=3D"container" style=3D"width: 560px; text-align: lef=
+t; border-spacing: 0; border-collapse: collapse; margin: 0 auto;">=0D
+          <tr>=0D
+            <td style=3D'font-family: -apple-system, BlinkMacSystemFont, =
+"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droi=
+d Sans", "Helvetica Neue", sans-serif;'>=0D
+              <p class=3D"disclaimer__subtext" style=3D"color: #999; line=
+-height: 150%; font-size: 14px; margin: 0;">If you have any questions, re=
+ply to this email or contact us at <a href=3D"mailto:contact@ergodox-ez.c=
+om" style=3D"font-size: 14px; text-decoration: none; color: #1990C6;">con=
+tact@ergodox-ez.com</a></p>=0D
+            </td>=0D
+          </tr>=0D
+        </table>=0D
+      </center>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+<img src=3D"https://cdn.shopify.com/s/assets/themes_support/notifications=
+/spacer-1a26dfd5c56b21ac888f9f1610ef81191b571603cb207c6c0f564148473cab3c.=
+png" class=3D"spacer" height=3D"1" style=3D"min-width: 600px; height: 0;"=
+>=0D
+=0D
+        </td>=0D
+      </tr>=0D
+    </table>=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_5e9414baaaa84_adfd4fc480b--

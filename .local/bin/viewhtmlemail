@@ -1,0 +1,117 @@
+#! /usr/bin/env python3
+"""Take a mail html string as input and open in with xdg-open.
+
+Example:
+    To use it from mutt, put the following lines in your .muttrc:
+        macro index,pager \CU "<pipe-entry>viewhtmlemail<enter>"
+"""
+import email
+import fileinput
+import mimetypes
+import os
+import re
+import shlex
+import subprocess
+from hashlib import sha1
+
+
+def decode_html_part(html_part):
+    html_bytes = html_part.get_payload(decode=True)
+    for encoding in ["utf8", "Windows-1252"]:
+        try:
+            html_string = html_bytes.decode(encoding)
+            return html_string, encoding
+        except UnicodeDecodeError:
+            print(f"Couldn't decode message with encoding: {encoding}")
+    raise ValueError("Couldn't find fitting encoding for html file")
+
+
+def update_html_file(html_part, subfiles):
+    """Substitute CIDs to filenames."""
+    html_string, encoding = decode_html_part(html_part)
+    for subfile in subfiles:
+        html_string = str(
+            re.sub(
+                "cid: ?" + subfile["Content-Id"],
+                "file://" + subfile["filepath"],
+                html_string,
+                flags=re.IGNORECASE,
+            )
+        )
+    return html_string.encode(encoding)
+
+
+def create_html_file(tmpdir, html_part, subfiles):
+    html_bytes = update_html_file(html_part, subfiles)
+    html_filepath = os.path.join(tmpdir, "view_html.html")
+    with open(html_filepath, "wb") as html_file:
+        html_file.write(html_bytes)
+    return html_filepath
+
+
+def get_part_filepath(mail_tmp_dir, part, counter):
+    filename = part.get_filename()
+    if not filename:
+        ext = mimetypes.guess_extension(part.get_content_type())
+        if not ext:
+            # Use a generic bag-of-bits extension
+            ext = ".bin"
+        filename = f"part-{counter:03}{ext}"
+    # Applications should really sanitize the given filename so that an
+    # email message can't be used to overwrite important files.
+    # As a first step, guard against ../
+    if "../" in filename:
+        print(f"Eek! Possible security problem in filename: {filename}")
+        return
+    return os.path.join(mail_tmp_dir, filename)
+
+
+def write_part_file(part, part_filepath):
+    content_id = None
+    part_keys_dict = {k.lower(): v for k, v in part.items()}
+    content_id = part_keys_dict.get("content-id")
+    if not content_id:
+        return
+    with open(part_filepath, "wb") as part_file:
+        part_file.write(part.get_payload(decode=True))
+    return {"filepath": part_filepath, "Content-Id": content_id.strip("<>")}
+
+
+def handle_mail_parts(mail_message, mail_tmp_dir):
+    html_part = None
+    counter = 1
+    subfiles = []
+    for part in mail_message.walk():
+        if part.is_multipart() or part.get_content_type == "message/rfc822":
+            # multipart/* are just containers
+            continue
+        if part.get_content_subtype() == "html":
+            if html_part:  # TODO Handle multiple html files
+                print("Eek, more than one html part!")
+            html_part = part
+            continue
+        filepath = get_part_filepath(mail_tmp_dir, part, counter)
+        if not filepath:
+            continue
+        subfile_dict = write_part_file(part, filepath)
+        if subfile_dict is not None:
+            subfiles.append(subfile_dict)
+            counter += 1
+    return html_part, subfiles
+
+
+def view_html_message(tmp_root_dir, email_str):
+    email_hash = sha1(email_str.encode("utf8")).hexdigest()
+    mail_tmp_dir = os.path.join(tmp_root_dir, email_hash)
+    os.makedirs(mail_tmp_dir, exist_ok=True)
+    mail_message = email.message_from_string(email_str)
+    html_part, subfiles = handle_mail_parts(mail_message, mail_tmp_dir)
+    html_filepath = create_html_file(mail_tmp_dir, html_part, subfiles)
+    print("Calling xdg-open on file://" + html_filepath)
+    subprocess.run(shlex.split(f"xdg-open {html_filepath}"), check=True)
+
+
+if __name__ == "__main__":
+    EMAIL_STR = "".join(fileinput.input())
+    TMP_ROOT_DIR = "/tmp/view_html"
+    view_html_message(TMP_ROOT_DIR, EMAIL_STR)

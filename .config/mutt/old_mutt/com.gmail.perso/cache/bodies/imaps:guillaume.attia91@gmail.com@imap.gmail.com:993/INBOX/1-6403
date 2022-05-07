@@ -1,0 +1,353 @@
+Delivered-To: guillaume.attia91@gmail.com
+Received: by 2002:a5e:a80a:0:0:0:0:0 with SMTP id c10csp232015ioa;
+        Mon, 13 Apr 2020 09:17:46 -0700 (PDT)
+X-Google-Smtp-Source: APiQypJR+mZ7GQin4xMiPGDE+w59SALnZ9cSkyOuTX9qyaGMVYCQgkOc3+YMf0NL2CLG4KnnXhDv
+X-Received: by 2002:a1c:ba09:: with SMTP id k9mr18895352wmf.176.1586794666090;
+        Mon, 13 Apr 2020 09:17:46 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1586794666; cv=none;
+        d=google.com; s=arc-20160816;
+        b=wOgaDGC14lunA8QE+2XGykmfoGwTk7ckK/9ugR8pLzSx+6i6NmoUGGo0rfFoayEdgL
+         SisPzweooG7al6/2CNEU/YGqGnDM4ShD761K/OGlBTadI3UyQsFw6cyUNNtODp+8U8kt
+         HKdFWw1p+V+awf4ZiB4ov6M/SX2aX+J4j9hU0E1rKkF6JfT7dV2yH6w2ITq8qBti2+Sf
+         Ai98hAXxSeb9IySbkqJVLj4M0gqqA2LwZN5GOGTbRjldd2pd3246diD21+NSU/WKozzn
+         CM5xj6DWJb6YOuI48Sz5Wu4k5MDwCZ8HO+80/XHdXjj7mnvkzSFz7XomdLVfwoC4wI4S
+         QKOw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:message-id:to:from:date:dkim-signature;
+        bh=gz7lV2Q7uDGV8GhhtFYRWqkHiHaYgSoppSd+Zt8uvw4=;
+        b=ZF8zBANZRrnWyn/KiUwdkcuACGNzBzgYH8ba7tthufoY9fN24DB5AJcLeQ45UB36E8
+         hD8eOqgeFWdHFtDr7SZ3jP9cG40OYLe4E4rhHLIrwcV/5QhT091GedkI69BQp7yJ81Rx
+         eYLoBABsKnkX5PyNiROMtW4SEa48yQB3aCt46g5ixNslhUc1OxQJpUn05+Aov+T9UlNS
+         6pewaCtvA89XdFOkjKIHHM8P7fiQyOp8RsIh6DaF/fJiLEcq+whAP3b6puw8+2mDsO6E
+         4CnK+GQoEJNNOwR40M7OSsf5AuWLAVKkNb5H4V5+PTegiB+S6DQglltk0abpTZJ2JCqR
+         vR+g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dhl.com header.s=20140901 header.b=VpomkN9T;
+       spf=pass (google.com: domain of dutycash@dhl.com designates 165.72.200.101 as permitted sender) smtp.mailfrom=dutycash@dhl.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=dhl.com
+Return-Path: <dutycash@dhl.com>
+Received: from gateway1e.dhl.com (gateway1e.dhl.com. [165.72.200.101])
+        by mx.google.com with ESMTPS id m11si10143776wro.431.2020.04.13.09.17.45
+        for <guillaume.attia91@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 13 Apr 2020 09:17:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of dutycash@dhl.com designates 165.72.200.101 as permitted sender) client-ip=165.72.200.101;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dhl.com header.s=20140901 header.b=VpomkN9T;
+       spf=pass (google.com: domain of dutycash@dhl.com designates 165.72.200.101 as permitted sender) smtp.mailfrom=dutycash@dhl.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=dhl.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=dhl.com; l=22261; s=20140901; t=1586794665;
+  h=date:from:to:message-id:subject:mime-version;
+  bh=gz7lV2Q7uDGV8GhhtFYRWqkHiHaYgSoppSd+Zt8uvw4=;
+  b=VpomkN9TN+fbQO1Xm16bSXk7mpn2pXGzhHSB/hIJbJfEEvrXTFQnN8gQ
+   GMhgQotkS+5vP5gwlsLn+MIrN/mmMcCtNgY+aMqlfz+N90i+TU07asCAS
+   wg++2f/vU5FA+DQ0OoLbWSNlHRPttw+guRTtrhjvxUXnZjO7yyk3llAYx
+   GtNs0INpE3/T7YRHHW6hPlMfN0m+3EDdM/kzwCcYPj8A2oH5AS8VC17BK
+   MR45wsmMRLum8litILW2poQxI+LeSTvBMLcWTZlU3HvqLrcm+3hC8A6ga
+   i1NjnsKsRKjwBzG3kc+u9pDfS8eiEJQvGMQt3S28cUPz22k8gLlKeMr6E
+   g==;
+Received: from czcholspc001381.prg-dc.dhl.com ([165.72.52.101])
+  by gateway1e.dhl.com with ESMTP; 13 Apr 2020 16:17:45 +0000
+Date: Mon, 13 Apr 2020 16:17:45 +0000 (UTC)
+From: DHL Express <dutycash@dhl.com>
+To: guillaume.attia91@gmail.com
+Message-ID: <2117988504.442822.1586794665469@czcholspc001381.prg-dc.dhl.com>
+Subject: Alerte concernant le paiement des droits de douane/taxes
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_442819_620458628.1586794665465"
+
+------=_Part_442819_620458628.1586794665465
+Content-Type: multipart/related; 
+	boundary="----=_Part_442820_1889322462.1586794665465"
+
+------=_Part_442820_1889322462.1586794665465
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<table width=3D'600' border=3D'0' align=3D'center' cellpadding=3D'3' cellsp=
+acing=3D'3'><tr><td style=3D'font-size:0.7em; font-family:Arial, Helvetica,=
+ sans-serif;'>Fran=C3=A7ais | <a href=3D'#English'>English</a></td></tr></t=
+able><a name=3D'French' id=3D'French'></a><meta http-equiv=3D"Content-Type"=
+ content=3D"text/html; charset=3DUTF-8"><title>Payment Request - Import dut=
+ies and charges</title><meta name=3D"viewport" content=3D"width=3Ddevice-wi=
+dth, initial-scale=3D1.0"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%"><tbody><tr><td align=3D"center"><table class=3D"bodye=
+mail" style=3D"background: #ffffff; border: thin solid #ebebeb; width: 600p=
+x; font-family: Arial, Helvetica, sans-serif; font-size: 12px; text-align: =
+center;" align=3D"center" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"600"><tbody><tr><td align=3D"left" valign=3D"top"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><t=
+d><img src=3D"https://del.dhl.com/img/email_assets/images/header.jpg" alt=
+=3D"DHL Logo" height=3D"114" width=3D"600"></td></tr></tbody></table><table=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr=
+><td width=3D"28">&nbsp;</td><td><table border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" width=3D"100%"><tbody><tr><td style=3D"color: #D60411; font-f=
+amily: Arial, Helvetica, sans-serif; font-size: 20px; margin: 0px; text-tra=
+nsform: uppercase; font-weight: bold;" align=3D"left" valign=3D"top"><div a=
+ria-describedby=3D"cke_93" title=3D"Rich Text Editor, MAIN_HEADING" aria-la=
+bel=3D"Rich Text Editor, MAIN_HEADING" role=3D"textbox" style=3D"position: =
+relative;" spellcheck=3D"false" tabindex=3D"0" class=3D"cke_editable cke_ed=
+itable_inline cke_contents_ltr cke_show_borders" id=3D"MAIN_HEADING">PAIEME=
+NT DES DROITS DE DOUANE/TAXES REQUIS</div></td></tr></tbody></table></td><t=
+d width=3D"26">&nbsp;</td></tr></tbody></table><table border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td width=3D"28">&nbs=
+p;</td><td align=3D"left" valign=3D"top"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td>&nbsp;</td></tr></tbody=
+></table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%"><tbody><tr><td align=3D"left" valign=3D"top"><table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td style=3D"font-=
+family: Arial, Helvetica, sans-serif; font-size: 14px;" align=3D"left" vali=
+gn=3D"top"><div aria-describedby=3D"cke_126" title=3D"Rich Text Editor, GRE=
+ETING" aria-label=3D"Rich Text Editor, GREETING" role=3D"textbox" style=3D"=
+position: relative;" spellcheck=3D"false" tabindex=3D"0" class=3D"cke_edita=
+ble cke_editable_inline cke_contents_ltr cke_show_borders" id=3D"GREETING">=
+Bonjour MARTIN RETAUX,</div></td></tr><tr><td>&nbsp;</td></tr><tr><td style=
+=3D"font-family: Arial, Helvetica, sans-serif; font-size: 12px;" align=3D"l=
+eft" valign=3D"top"><div aria-describedby=3D"cke_159" title=3D"Rich Text Ed=
+itor, BODY" aria-label=3D"Rich Text Editor, BODY" role=3D"textbox" style=3D=
+"position: relative;" spellcheck=3D"false" tabindex=3D"0" class=3D"cke_edit=
+able cke_editable_inline cke_contents_ltr cke_show_borders" id=3D"BODY">Vot=
+re envoi DHL <span style=3D"font-family: Arial, Helvetica, sans-serif; back=
+ground-color: rgb(255, 255, 255);">Express</span>, bordereau N=C2=B0 633712=
+5222 en provenance de TIBBO TECHNOLOGY INC. est en cours d'acheminement. De=
+s droits de douane/taxes s'appliquent =C3=A0 votre envoi. Le montant est de=
+ <strong>EUR 60.50</strong>.<br><br>Nous proc=C3=A9dons au paiement des dro=
+its de douane/taxes en votre nom aupr=C3=A8s des autorit=C3=A9s afin d'acc=
+=C3=A9l=C3=A9rer les proc=C3=A9dures douani=C3=A8res.&nbsp;Afin de recevoir=
+ votre colis, cliquez <a data-cke-saved-href=3D"https://del.dhl.com/FR/gWx2=
+ghsqvc" href=3D"https://del.dhl.com/FR/gWx2ghsqvc">ici</a> pour effectuer v=
+otre paiement en ligne s=C3=A9curis=C3=A9, consulter le d=C3=A9tail de vos =
+droits/taxes et t=C3=A9l=C3=A9charger les documents.<br><br>Vous pouvez sui=
+vre votre envoi <a data-cke-saved-href=3D"http://www.dhl.fr/fr/dhl_express/=
+suivi_expedition.html?brand=3DDHL&amp;AWB=3D6337125222" href=3D"http://www.=
+dhl.fr/fr/dhl_express/suivi_expedition.html?brand=3DDHL&amp;AWB=3D633712522=
+2">ici</a>.</div></td></tr></tbody></table><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td></td></tr></tbody></=
+table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+"><tbody><tr><td></td></tr></tbody></table></td><td width=3D"5%">&nbsp;</td=
+><td align=3D"left" valign=3D"top" width=3D"130"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td align=3D"center=
+"><a _of_prevonblurhandler=3D"null" _of_prevonfocushandler=3D"null" data-ck=
+e-saved-href=3D"https://del.dhl.com/FR/gWx2ghsqvc" href=3D"https://del.dhl.=
+com/FR/gWx2ghsqvc"><img src=3D"https://del.dhl.com/img/email_assets/images/=
+logo_pay_online.png" alt=3D"pay online" height=3D"74" width=3D"74"></a></td=
+></tr><tr><td class=3D"title" style=3D"font-weight: bold; text-transform: c=
+apitalize; font-family: Arial, Helvetica, sans-serif; color: #D60000; font-=
+size: 14px;" align=3D"center"><div aria-describedby=3D"cke_489" title=3D"Ri=
+ch Text Editor, LOGO_TITLE" aria-label=3D"Rich Text Editor, LOGO_TITLE" rol=
+e=3D"textbox" style=3D"position: relative;" spellcheck=3D"false" tabindex=
+=3D"0" class=3D"cke_editable cke_editable_inline cke_contents_ltr cke_show_=
+borders" id=3D"LOGO_TITLE">Paiement des droits de douane/taxes</div></td></=
+tr></tbody></table></td></tr></tbody></table><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td>&nbsp;</td></tr></t=
+body></table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"3" width=
+=3D"100%"><tbody><tr><td style=3D"color: #D60411; font-family: Arial, Helve=
+tica, sans-serif; font-size: 14px; margin-bottom: 0px; margin-top: 5px; tex=
+t-transform: uppercase; font-weight: bold;"><div aria-describedby=3D"cke_22=
+5" title=3D"Rich Text Editor,SHPDTL_HEADING" aria-label=3D"Rich Text Editor=
+, SHPDTL_HEADING" role=3D"textbox" style=3D"position: relative;" spellcheck=
+=3D"false" tabindex=3D"0" class=3D"cke_editable cke_editable_inline cke_con=
+tents_ltr cke_show_borders" id=3D"SHPDTL_HEADING">INFORMATIONS SUR VOTRE EN=
+VOI</div></td></tr></tbody></table><table id=3D"ShipmentDetails" style=3D"f=
+ont-family: Arial, Helvetica, sans-serif; font-size: 12px; width: 100%" bor=
+der=3D"0" cellpadding=3D"5" cellspacing=3D"3" width=3D"100%"><tbody><tr><td=
+ class=3D"bold" style=3D"font-weight: bold" align=3D"left" bgcolor=3D"#F5F5=
+F5" valign=3D"top" width=3D"150"><div aria-describedby=3D"cke_258" title=3D=
+"Rich Text Editor, HWB_LABEL" aria-label=3D"Rich Text Editor, HWB_LABEL" ro=
+le=3D"textbox" style=3D"position: relative;" spellcheck=3D"false" tabindex=
+=3D"0" class=3D"cke_editable cke_editable_inline cke_contents_ltr cke_show_=
+borders" id=3D"HWB_LABEL">N=C2=B0 de bordereau</div></td><td align=3D"left"=
+ bgcolor=3D"#F5F5F5" valign=3D"top">6337125222</td></tr><tr><td class=3D"bo=
+ld" style=3D"font-weight: bold" align=3D"left" bgcolor=3D"#F5F5F5" valign=
+=3D"top"><div aria-describedby=3D"cke_291" title=3D"Rich Text Editor, CUSTA=
+DDRESS_LABEL" aria-label=3D"Rich Text Editor, CUSTADDRESS_LABEL" role=3D"te=
+xtbox" style=3D"position: relative;" spellcheck=3D"false" tabindex=3D"0" cl=
+ass=3D"cke_editable cke_editable_inline cke_contents_ltr cke_show_borders" =
+id=3D"CUSTADDRESS_LABEL">Adresse</div></td><td align=3D"left" bgcolor=3D"#F=
+5F5F5" valign=3D"top">2 RUE LEGER-FELICITE SONTHONAX AUBERVILLIERS 93300 AU=
+BERVILLIERS </td></tr></tbody></table><table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%"><tbody><tr><td></td></tr></tbody></table>=
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbo=
+dy><tr><td>&nbsp;</td></tr></tbody></table><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td style=3D"font-family=
+: Arial, Helvetica, sans-serif; font-size: 12px; width: 100%"><em><div aria=
+-describedby=3D"cke_192" title=3D"Rich Text Editor, SIGNATURE_LINE1" aria-l=
+abel=3D"Rich Text Editor, SIGNATURE_LINE1" role=3D"textbox" style=3D"positi=
+on: relative;" spellcheck=3D"false" tabindex=3D"0" class=3D"cke_editable ck=
+e_editable_inline cke_contents_ltr cke_show_borders" id=3D"SIGNATURE_LINE1"=
+>Nous vous remercions pour votre paiement en ligne.</div></em><br><strong><=
+div aria-describedby=3D"cke_193" title=3D"Rich Text Editor, SIGNATURE_LINE2=
+" aria-label=3D"Rich Text Editor, SIGNATURE_LINE2" role=3D"textbox" style=
+=3D"position: relative; font-family: Arial, Helvetica, sans-serif; color: r=
+gb(214, 4, 17); background-color: rgb(255, 255, 255);" spellcheck=3D"false"=
+ tabindex=3D"0" class=3D"cke_editable cke_editable_inline cke_contents_ltr =
+cke_show_borders" id=3D"SIGNATURE_LINE2">DHL Express - Excellence. Simply d=
+elivered.</div></strong></td></tr></tbody></table><table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td>&nbsp;</td></t=
+r></tbody></table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%"><tbody><tr><td width=3D"160"><img src=3D"https://del.dhl.com/=
+img/email_assets/images/Deutsche-Post-Group.png" alt=3D"Deutsche Post DHL G=
+roup" height=3D"45" width=3D"160"></td><td>&nbsp;</td><td class=3D"footer" =
+style=3D"font-family: Verdana, Geneva, sans-serif; font-size: 10px; text-al=
+ign: right" align=3D"right"><div aria-describedby=3D"cke_522" title=3D"Rich=
+ Text Editor, FOOTER_TEXT" aria-label=3D"Rich Text Editor, FOOTER_TEXT" rol=
+e=3D"textbox" style=3D"position: relative;" spellcheck=3D"false" tabindex=
+=3D"0" class=3D"cke_editable cke_editable_inline cke_contents_ltr cke_show_=
+borders" id=3D"FOOTER_TEXT"><a data-cke-saved-href=3D"http://www.dhl.fr/fr.=
+html" href=3D"http://www.dhl.fr/fr.html">DHL Express</a> | <a data-cke-save=
+d-href=3D"http://www.dhl.fr/fr/centre_de_contact/contacter_express.html" hr=
+ef=3D"http://www.dhl.fr/fr/centre_de_contact/contacter_express.html">Contac=
+t DHL</a> | <a data-cke-saved-href=3D"http://www.dhl.fr/fr/juridique.html#p=
+rivacy" href=3D"http://www.dhl.fr/fr/juridique.html#privacy">Privacy Policy=
+</a></div><br>2020 &copy; DHL International GmbH. All rights reserved.</td>=
+</tr></tbody></table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%"><tbody><tr><td>&nbsp;</td></tr></tbody></table></td><td wi=
+dth=3D"26">&nbsp;</td></tr></tbody></table></td></tr></tbody></table></td><=
+/tr></tbody></table><table width=3D'600' border=3D'0' align=3D'center' cell=
+padding=3D'3' cellspacing=3D'3'><tr><td><hr/></td></tr></table><table width=
+=3D'600' border=3D'0' align=3D'center' cellpadding=3D'3' cellspacing=3D'3'>=
+<tr><td style=3D'font-size:0.7em; font-family:Arial, Helvetica, sans-serif;=
+'><a href=3D'#French'>Fran=C3=A7ais</a> | English</td></tr></table><a name=
+=3D'English' id=3D'English'></a><meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3DUTF-8"><title>Payment Request - Import duties and =
+charges</title><meta name=3D"viewport" content=3D"width=3Ddevice-width, ini=
+tial-scale=3D1.0"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%"><tbody><tr><td align=3D"center"><table class=3D"bodyemail" st=
+yle=3D"background: #ffffff; border: thin solid #ebebeb; width: 600px; font-=
+family: Arial, Helvetica, sans-serif; font-size: 12px; text-align: center;"=
+ align=3D"center" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"600"><tbody><tr><td align=3D"left" valign=3D"top"><table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td><img s=
+rc=3D"https://del.dhl.com/img/email_assets/images/header.jpg" alt=3D"DHL Lo=
+go" height=3D"114" width=3D"600"></td></tr></tbody></table><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td width=
+=3D"28">&nbsp;</td><td><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"100%"><tbody><tr><td style=3D"color: #D60411; font-family: Ari=
+al, Helvetica, sans-serif; font-size: 20px; margin: 0px; text-transform: up=
+percase; font-weight: bold;" align=3D"left" valign=3D"top"><div aria-descri=
+bedby=3D"cke_93" title=3D"Rich Text Editor, MAIN_HEADING" aria-label=3D"Ric=
+h Text Editor, MAIN_HEADING" role=3D"textbox" style=3D"position: relative;"=
+ spellcheck=3D"false" tabindex=3D"0" class=3D"cke_editable cke_editable_inl=
+ine cke_contents_ltr cke_show_borders" id=3D"MAIN_HEADING">IMPORT DUTY/TAX =
+PAYMENT IS REQUIRED</div></td></tr></tbody></table></td><td width=3D"26">&n=
+bsp;</td></tr></tbody></table><table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%"><tbody><tr><td width=3D"28">&nbsp;</td><td align=
+=3D"left" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%"><tbody><tr><td>&nbsp;</td></tr></tbody></table><table=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr=
+><td align=3D"left" valign=3D"top"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"100%"><tbody><tr><td style=3D"font-family: Arial, =
+Helvetica, sans-serif; font-size: 14px;" align=3D"left" valign=3D"top"><div=
+ aria-describedby=3D"cke_126" title=3D"Rich Text Editor, GREETING" aria-lab=
+el=3D"Rich Text Editor, GREETING" role=3D"textbox" style=3D"position: relat=
+ive;" spellcheck=3D"false" tabindex=3D"0" class=3D"cke_editable cke_editabl=
+e_inline cke_contents_ltr cke_show_borders" id=3D"GREETING">Hello MARTIN RE=
+TAUX,</div></td></tr><tr><td>&nbsp;</td></tr><tr><td style=3D"font-family: =
+Arial, Helvetica, sans-serif; font-size: 12px;" align=3D"left" valign=3D"to=
+p"><div aria-describedby=3D"cke_159" title=3D"Rich Text Editor, BODY" aria-=
+label=3D"Rich Text Editor, BODY" role=3D"textbox" style=3D"position: relati=
+ve;" spellcheck=3D"false" tabindex=3D"0" class=3D"cke_editable cke_editable=
+_inline cke_contents_ltr cke_show_borders" id=3D"BODY">Your DHL <span style=
+=3D"font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 2=
+55, 255);">Express</span><span style=3D"font-family: Arial, Helvetica, sans=
+-serif; background-color: rgb(255, 255, 255);">&nbsp;</span>=E2=80=8Bshipme=
+nt with waybill number 6337125222 from TIBBO TECHNOLOGY INC. is on its way.=
+ There is import duty/tax due on your shipment. The amount is <strong>EUR 6=
+0.50</strong>.<br><br>We will pay your import duty/tax to the authorities o=
+n your behalf to speed regulatory clearance. In order for us to deliver you=
+r shipment,&nbsp;please pay&nbsp; this amount securely online now. Click <a=
+ data-cke-saved-href=3D"https://del.dhl.com/FR/gWx2ghsqvc" href=3D"https://=
+del.dhl.com/FR/gWx2ghsqvc">here</a> to pay, view the duty/tax calculation a=
+nd download the relevant documents.<br><br>You may track your shipment <a _=
+of_prevonblurhandler=3D"null" _of_prevonfocushandler=3D"null" data-cke-save=
+d-href=3D"http://www.dhl.fr/en/express/tracking.html?brand=3DDHL&amp;AWB=3D=
+6337125222" href=3D"http://www.dhl.fr/en/express/tracking.html?brand=3DDHL&=
+amp;AWB=3D6337125222">here</a>.</div></td></tr></tbody></table><table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td><=
+/td></tr></tbody></table><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%"><tbody><tr><td></td></tr></tbody></table></td><td wid=
+th=3D"5%">&nbsp;</td><td align=3D"left" valign=3D"top" width=3D"130"><table=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr=
+><td align=3D"center"><a _of_prevonblurhandler=3D"null" _of_prevonfocushand=
+ler=3D"null" data-cke-saved-href=3D"https://del.dhl.com/FR/gWx2ghsqvc" href=
+=3D"https://del.dhl.com/FR/gWx2ghsqvc"><img src=3D"https://del.dhl.com/img/=
+email_assets/images/logo_pay_online.png" alt=3D"pay online" height=3D"74" w=
+idth=3D"74"></a></td></tr><tr><td class=3D"title" style=3D"font-weight: bol=
+d; text-transform: capitalize; font-family: Arial, Helvetica, sans-serif; c=
+olor: #D60000; font-size: 14px;" align=3D"center"><div aria-describedby=3D"=
+cke_489" title=3D"Rich Text Editor, LOGO_TITLE" aria-label=3D"Rich Text Edi=
+tor, LOGO_TITLE" role=3D"textbox" style=3D"position: relative;" spellcheck=
+=3D"false" tabindex=3D"0" class=3D"cke_editable cke_editable_inline cke_con=
+tents_ltr cke_show_borders" id=3D"LOGO_TITLE">Duty/Tax Payment</div></td></=
+tr></tbody></table></td></tr></tbody></table><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td>&nbsp;</td></tr></t=
+body></table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"3" width=
+=3D"100%"><tbody><tr><td style=3D"color: #D60411; font-family: Arial, Helve=
+tica, sans-serif; font-size: 14px; margin-bottom: 0px; margin-top: 5px; tex=
+t-transform: uppercase; font-weight: bold;"><div aria-describedby=3D"cke_22=
+5" title=3D"Rich Text Editor,SHPDTL_HEADING" aria-label=3D"Rich Text Editor=
+, SHPDTL_HEADING" role=3D"textbox" style=3D"position: relative;" spellcheck=
+=3D"false" tabindex=3D"0" class=3D"cke_editable cke_editable_inline cke_con=
+tents_ltr cke_show_borders" id=3D"SHPDTL_HEADING">SHIPMENT Information</div=
+></td></tr></tbody></table><table id=3D"ShipmentDetails" style=3D"font-fami=
+ly: Arial, Helvetica, sans-serif; font-size: 12px; width: 100%" border=3D"0=
+" cellpadding=3D"5" cellspacing=3D"3" width=3D"100%"><tbody><tr><td class=
+=3D"bold" style=3D"font-weight: bold" align=3D"left" bgcolor=3D"#F5F5F5" va=
+lign=3D"top" width=3D"150"><div aria-describedby=3D"cke_258" title=3D"Rich =
+Text Editor, HWB_LABEL" aria-label=3D"Rich Text Editor, HWB_LABEL" role=3D"=
+textbox" style=3D"position: relative;" spellcheck=3D"false" tabindex=3D"0" =
+class=3D"cke_editable cke_editable_inline cke_contents_ltr cke_show_borders=
+" id=3D"HWB_LABEL">Waybill No.</div></td><td align=3D"left" bgcolor=3D"#F5F=
+5F5" valign=3D"top">6337125222</td></tr><tr><td class=3D"bold" style=3D"fon=
+t-weight: bold" align=3D"left" bgcolor=3D"#F5F5F5" valign=3D"top"><div aria=
+-describedby=3D"cke_291" title=3D"Rich Text Editor, CUSTADDRESS_LABEL" aria=
+-label=3D"Rich Text Editor, CUSTADDRESS_LABEL" role=3D"textbox" style=3D"po=
+sition: relative;" spellcheck=3D"false" tabindex=3D"0" class=3D"cke_editabl=
+e cke_editable_inline cke_contents_ltr cke_show_borders" id=3D"CUSTADDRESS_=
+LABEL">Address</div></td><td align=3D"left" bgcolor=3D"#F5F5F5" valign=3D"t=
+op">2 RUE LEGER-FELICITE SONTHONAX AUBERVILLIERS 93300 AUBERVILLIERS </td><=
+/tr></tbody></table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%"><tbody><tr><td></td></tr></tbody></table><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td>&nbsp;<=
+/td></tr></tbody></table><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%"><tbody><tr><td style=3D"font-family: Arial, Helvetica=
+, sans-serif; font-size: 12px; width: 100%"><em><div aria-describedby=3D"ck=
+e_192" title=3D"Rich Text Editor, SIGNATURE_LINE1" aria-label=3D"Rich Text =
+Editor, SIGNATURE_LINE1" role=3D"textbox" style=3D"position: relative;" spe=
+llcheck=3D"false" tabindex=3D"0" class=3D"cke_editable cke_editable_inline =
+cke_contents_ltr cke_show_borders" id=3D"SIGNATURE_LINE1">Thank you for pay=
+ing online.</div></em><br><strong><div aria-describedby=3D"cke_193" title=
+=3D"Rich Text Editor, SIGNATURE_LINE2" aria-label=3D"Rich Text Editor, SIGN=
+ATURE_LINE2" role=3D"textbox" style=3D"position: relative; font-family: Ari=
+al, Helvetica, sans-serif; color: rgb(214, 4, 17); background-color: rgb(25=
+5, 255, 255);" spellcheck=3D"false" tabindex=3D"0" class=3D"cke_editable ck=
+e_editable_inline cke_contents_ltr cke_show_borders" id=3D"SIGNATURE_LINE2"=
+>DHL Express - Excellence. Simply delivered.</div></strong></td></tr></tbod=
+y></table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%"><tbody><tr><td>&nbsp;</td></tr></tbody></table><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td width=3D"16=
+0"><img src=3D"https://del.dhl.com/img/email_assets/images/Deutsche-Post-Gr=
+oup.png" alt=3D"Deutsche Post DHL Group" height=3D"45" width=3D"160"></td><=
+td>&nbsp;</td><td class=3D"footer" style=3D"font-family: Verdana, Geneva, s=
+ans-serif; font-size: 10px; text-align: right" align=3D"right"><div aria-de=
+scribedby=3D"cke_522" title=3D"Rich Text Editor, FOOTER_TEXT" aria-label=3D=
+"Rich Text Editor, FOOTER_TEXT" role=3D"textbox" style=3D"position: relativ=
+e;" spellcheck=3D"false" tabindex=3D"0" class=3D"cke_editable cke_editable_=
+inline cke_contents_ltr cke_show_borders" id=3D"FOOTER_TEXT"><a data-cke-sa=
+ved-href=3D"http://www.dhl.fr/en.html" href=3D"http://www.dhl.fr/en.html">D=
+HL Express</a> | <a data-cke-saved-href=3D"http://www.dhl.fr/en/contact_cen=
+ter/contact_express.html" href=3D"http://www.dhl.fr/en/contact_center/conta=
+ct_express.html">Contact DHL</a> | <a data-cke-saved-href=3D"http://www.dhl=
+.fr/en/legal.html#privacy" href=3D"http://www.dhl.fr/en/legal.html#privacy"=
+>Privacy Policy</a></div><br>2020 &copy; DHL International GmbH. All rights=
+ reserved.</td></tr></tbody></table><table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%"><tbody><tr><td>&nbsp;</td></tr></tbody></ta=
+ble></td><td width=3D"26">&nbsp;</td></tr></tbody></table></td></tr></tbody=
+></table></td></tr></tbody></table><table width=3D'600' border=3D'0' align=
+=3D'center' cellpadding=3D'3' cellspacing=3D'3'><tr><td><hr/></td></tr></ta=
+ble>
+------=_Part_442820_1889322462.1586794665465--
+
+------=_Part_442819_620458628.1586794665465--

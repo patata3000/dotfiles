@@ -1,0 +1,10 @@
+[general]
+qt_version = 5.15.2
+version = 2.0.1
+serviceworker_workaround = 514
+
+[geometry]
+mainwindow = AdnQywADAAAAAAAAAAAAGAAAB38AAAQ3AAAAAAAAABgAAAd/AAAENwAAAAAAAAAAB4AAAAAAAAAAGAAAB38AAAQ3
+
+[inspector]
+

@@ -1,0 +1,42 @@
+macro index,pager \CH "<pipe-message>urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \CH "<pipe-entry>urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro generic \CH "<pipe-entry>urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
+# Read html messages into qutebrowser
+macro index,pager \CU "<pipe-entry>viewhtmlemail<enter>"
+
+
+macro index,pager $ "<sync-mailbox><shell-escape>mbsync -c ~/.config/isync/mbsyncrc aleia-outlook >/dev/null 2>&1 &<enter><enter-command>echo 'Synced mails'<enter>" \
+  "Sync mailbox near and far"
+
+bind index,pager j search-next
+bind index,pager k search-opposite
+bind index,pager \CT sidebar-toggle-visible
+bind index,pager \CQ sidebar-toggle-virtual
+bind index,pager \CN sidebar-next
+bind index,pager \CE sidebar-prev
+bind index,pager \CO sidebar-open
+
+bind index n next-entry
+bind index e previous-entry
+bind index o display-message
+bind index \CW collapse-all  # Collapse thread
+
+bind pager g top
+bind pager G bottom
+bind pager N next-entry
+bind pager E previous-entry
+bind pager o next-subthread
+bind pager y previous-subthread
+bind pager n next-line
+bind pager e previous-line
+
+bind attach,index,pager Y previous-page
+bind attach,index,pager O next-page
+
+bind attach,index g first-entry
+bind attach,index G last-entry
+
+bind attach n next-entry
+bind attach e previous-entry
+

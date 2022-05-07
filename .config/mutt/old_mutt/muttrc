@@ -1,0 +1,29 @@
+# Folder hooks
+folder-hook 'account.com.gmail.perso' 'source ~/.config/mutt/account.com.gmail.foo'
+folder-hook 'account.com.gmail.vianova' 'source ~/.config/mutt/account.com.gmail.bar'
+
+# Default account
+source ~/.config/mutt/account.com.gmail.perso
+
+# Macros for switching accounts
+macro index <f2> '<sync-mailbox><enter-command>source ~/.config/mutt/account.com.gmail.perso<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.config/mutt/account.com.gmail.vianova<enter><change-folder>!<enter>'
+
+# Fetch mail shortcut
+bind index G imap-fetch-mail
+
+# Workman layout
+source ~/.workman/muttrc
+
+# Luke Smith color settings
+source color
+
+set sidebar_visible = yes
+
+set mailcap_path = ~/.config/mutt/mailcap
+auto_view text/html
+
+set sendmail_wait = -1
+
+set new_mail_command="notify-send --icon='/home/santiago/Pictures/neomutt.png' \
+'New Email' '%n new messages, %u unread.' &"

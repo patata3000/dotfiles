@@ -1,0 +1,399 @@
+Delivered-To: guillaume.attia91@gmail.com
+Received: by 2002:a5e:a80a:0:0:0:0:0 with SMTP id c10csp580375ioa;
+        Mon, 11 May 2020 13:33:07 -0700 (PDT)
+X-Google-Smtp-Source: APiQypIIShP3Dz4ylACTTztdh9/sakyyrJqOvF1vfUa36osCVeBcYnxO1z1k9L93mADuBPg40kbg
+X-Received: by 2002:aa7:c3cb:: with SMTP id l11mr14573191edr.129.1589229187387;
+        Mon, 11 May 2020 13:33:07 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1589229187; cv=none;
+        d=google.com; s=arc-20160816;
+        b=MfSLjX1TvesYNhWraaz8t4M3oscGpCoI0AvV2yquOJ7coEtKUm7bCrQksIhpB7/atg
+         1TJkRKocRRpPvksF+/C0i7XapBR0a9vAmCHj68SQHV5ty5w9IGrLf65suLM2UAhPJtyH
+         CKu4scjT8uzlUAABbP4zsi2+UcQRc1BCafEympWHLAWM54snRMe/ZKmog0DJSCGaf7wd
+         mtnMr5Z6Ty/7/27B8LJFtffmYJH6w4cDo9HVCWJLhKeQ9jTu79Q6Ckvmn7OnaA/dwUVL
+         jXE9icqcZMtWa3txklgsiwhzp8vXhjhxoCcWkgEVBpStjpI32jND6sRBr8PyeCpJBQfo
+         jbQA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:subject:message-id:to:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=NlRywp9/SN3dfp9mikiIjCSQ35jGXuPU2O+n08wEQ/Y=;
+        b=aMgbV/9jGCO6a/kvH/sZXPys8iLsZOBsCJnnkr8odq3vxVDTowOszSupiquqmYzFk2
+         vnRJ4RB/Agr8RE6+YpVPhmwnWYySci59D8ZtVFFec1Vkk+vKzQYlfm/YF9cnNflM4ZSS
+         eMatPLLKCCOaDLvHMnZI+nK2RaJ47dOWWgIJoFNxhsyQT0IR3s6b0jIvQq1MNyct8TTN
+         63+oSSmyU2dZh64yC5wwQrZ9Y+HAq4vMWEsxzS5NZEWDfBzrIYqRjhPbj2VU8x24CwIQ
+         w7SMjKQdawAoCf9j28oB9mlNGjV8peWAmoQI3g0fIPjUurDKWKs7qoT06qiShQqBotUt
+         qk5g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.angel.co header.s=m1 header.b=MDNgy3sM;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="F/UBhiUl";
+       spf=pass (google.com: domain of bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co designates 167.89.11.231 as permitted sender) smtp.mailfrom="bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=angel.co
+Return-Path: <bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co>
+Received: from o7.email.angellist.co (o7.email.angellist.co. [167.89.11.231])
+        by mx.google.com with ESMTPS id g16si6075674edr.382.2020.05.11.13.33.06
+        for <guillaume.attia91@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 11 May 2020 13:33:07 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co designates 167.89.11.231 as permitted sender) client-ip=167.89.11.231;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.angel.co header.s=m1 header.b=MDNgy3sM;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="F/UBhiUl";
+       spf=pass (google.com: domain of bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co designates 167.89.11.231 as permitted sender) smtp.mailfrom="bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=angel.co
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=email.angel.co; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:list-unsubscribe; 
+	s=m1; bh=NlRywp9/SN3dfp9mikiIjCSQ35jGXuPU2O+n08wEQ/Y=; b=MDNgy3s
+	M0mF5YzX2Wnu7Div/cCOuugsSl4zn4Ynp1os9cyeuyFy+7LWXfIecMfRIQIOBJmT
+	P+iPojB8az3/gyoIdFRWTy938IzisTEvY4J+w+oSz9aIjYzaDAu5L2QdiXMYpcXU
+	K9lVU1UPjM6VHhYhJCSAdBM8cksvzW6iEIxg=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:list-unsubscribe:x-feedback-id; 
+	s=smtpapi; bh=NlRywp9/SN3dfp9mikiIjCSQ35jGXuPU2O+n08wEQ/Y=; b=F/
+	UBhiUlOvYHvpM+s7UNc6ADJEzYjlsEknd6PK03Z6Duj0LC4KCy1AazXh7badKoU+
+	pA/qsjC21JfcG6GbHmB3xcCAL7pHsvO8ZqHkKPFRBwy4eQBTeFV4gITEc10w4mWk
+	+etS+rebm1xXelKaHXIGLdKF62j68wOMeceLeinYw=
+Received: by filter0838p1iad2.sendgrid.net with SMTP id filter0838p1iad2-4115-5EB9B681-20
+        2020-05-11 20:33:05.720068277 +0000 UTC m=+397873.937347661
+Received: from MTMwNTE (unknown)
+	by ismtpd0008p1sjc2.sendgrid.net (SG) with HTTP id hkx1qNliSL6gVm-zCjW3sQ
+	Mon, 11 May 2020 20:33:05.563 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Date: Mon, 11 May 2020 20:33:05 +0000 (UTC)
+From: "AngelList Talent" <talent@angel.co>
+Mime-Version: 1.0
+To: guillaume.attia91@gmail.com
+Message-ID: <hkx1qNliSL6gVm-zCjW3sQ@ismtpd0008p1sjc2.sendgrid.net>
+Subject: We haven't seen you in a while
+X-ANGELLIST-ALLOW-PREMAILER: true
+List-unsubscribe: <https://angel.co/l/8f60bdad63e3c0bcb67820d27462d2d6/2sstvv>
+X-SG-EID: yG+BIyjlCoWBCFy8SCm7At2z0wJ//z5aNsqESWBKzBngCRWHg0Qiy9UYM23I6KHNeySdOeYHaH+K0A
+ 7ZrRoqQjyWQy1U6vMmIQWcOotLHy+G/mmMMUtdLxDPt9pxmfh9P+paDDBiXJ1YqMEcKMdtX2jShk2F
+ 6Q+zqULyR2riT4VQUPHmR7qLWkcZpcjScYOxERPdYDQ1Xv1Scp9+U7G6Kxial0F6FghgqZGYrNY9/n
+ g=
+X-SG-ID: ufcf/2ED3+w55AV1woyQyKD0plwVHpboNGXaC4Tl9MRYo0rAlTGR2Au+5KMYltPbIS7R+3kRFVWPqs
+ xBsAnRTjQ3M1wEPkEDYPlQq4JESnA/TsLBp273YKjdmN2Qx6s88xwEoAY7hfN4YO+c+XbTfw==
+X-Feedback-ID: 13051:UXl4CtcR5rLnvHsRj7C4EdqWNER+mKoqyLatPrj0Jtg=:UOKHjsKMFZv4aBUblgsl+XOW9Tx3URFGIXyPOF3QRCC2XwuGVstJgfCNobACQcXmAWxBcCMzxwKqcEUKDgmCrg==:SG
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">
+<html style=3D"font-family: -apple-system, system-ui, BlinkMacSystemFont, '=
+Helvetica Neue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-si=
+ze: 14px;">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<style>@media only screen and (max-width:425px) {
+  .dlm81.fft14 .wrapper {
+    padding: 0 0 64px !important;
+  }
+  .dlm81.fft14 .contentCard {
+    padding: 32px 16px !important; border: 1px solid #e7e9eb !important; bo=
+rder-right: none !important; border-left: none !important;
+  }
+}
+@media only screen and (min-device-width:601px) {
+  .dmst22.fje27 .module-container {
+    width: 100%; padding: 12px 20px 24px;
+  }
+  .dlm81.fty78 .container {
+    width: 558px !important;
+  }
+  .dlm81.fty78 .main {
+    padding: 32px !important;
+  }
+  .dlm81.fty78 .main.intro {
+    padding-bottom: 16px !important;
+  }
+  .dlm81.fty78 .footer {
+    padding: 8px 32px 48px !important;
+  }
+}
+@media screen and (max-width:420px) {
+  .dmst22.fje27 .module-container {
+    max-width: none; width: 95%;
+  }
+}
+@media screen and (max-width:520px) {
+  .dmst22.fjl80 .module-container {
+    padding-left: 0; padding-right: 0; width: 100%;
+  }
+}
+@media screen and (min-width:520px) {
+  .dlm81.fte67 img.header-image.image-border {
+    border: 1px solid #e4e7f0; border-radius: 8px;
+  }
+  .dlm81.ftr40 img.header-image.image-border {
+    border: 1px solid #e4e7f0; border-radius: 8px;
+  }
+}
+@media only screen and (min-width:960px) {
+  .dlm81.ftx72 .large-primary-button:hover {
+    background-color: #4b89ca;
+  }
+  .dlm81.ftx72 .medium-primary-button:hover {
+    background-color: #4b89ca;
+  }
+  .dlm81.ftx72 .small-primary-button:hover {
+    background-color: #4b89ca;
+  }
+  .dlm81.ftx72 .medium-secondary-button:hover {
+    color: #28313c; border-color: #b5c3cf;
+  }
+  .dlm81.ftx72 .small-secondary-button:hover {
+    color: #28313c; border-color: #b5c3cf;
+  }
+}
+body {
+font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue'=
+, Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-size: 14px;
+}
+@media screen and (max-width: 520px) {
+  body {
+    width: 100% !important;
+  }
+  img {
+    max-width: 100% !important; height: auto !important;
+  }
+  a {
+    word-break: break-word;
+  }
+  .second-container {
+    padding-left: 0px !important; padding-right: 0px !important;
+  }
+}
+@media only screen and (min-device-width: 601px) {
+  .container {
+    width: 520px !important;
+  }
+  .listings {
+    padding: 32px !important;
+  }
+}
+</style>
+</head>
+<body style=3D"font-family: -apple-system, system-ui, BlinkMacSystemFont, '=
+Helvetica Neue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-si=
+ze: 14px;"><div class=3D" dlm81 layouts-mailers fte67 talent_blue _a">
+
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" name=3D"viewpor=
+t">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible">
+
+
+
+
+
+
+<div style=3D"background-color: #000A46;">
+<!--[if (gte mso 9)|(IE)]>
+<table width=3D"600" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+  <tr>
+    <td>
+<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"container"=
+ style=3D"max-width: 560px; width: 100%; margin-left: auto; margin-right: a=
+uto;">
+<tr>
+<td class=3D"logo-container" style=3D"padding-top: 20px; padding-bottom: 12=
+px; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica N=
+eue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-size: 14px;" =
+align=3D"center">
+<img width=3D"147" border=3D"0" class=3D"logo-image" src=3D"https://angel.c=
+o/images/static_pages/logo/AngelList_White_Lockup_Large_Victory_Hand.png" a=
+lt=3D"Angellist white lockup large victory hand">
+</td>
+</tr>
+<tr>
+<td style=3D"font-family: -apple-system, system-ui, BlinkMacSystemFont, 'He=
+lvetica Neue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-size=
+: 14px;">
+<div class=3D" dmst22 fje27 _a">
+<div class=3D"module-container" style=3D"margin-left: auto; margin-right: a=
+uto; width: 95%; max-width: 496px; padding: 12px 0 24px;">
+<div style=3D"color: #FFFFFF; padding-bottom: 9px; font-size: 14px; line-he=
+ight: 16px;" align=3D"left">
+Update your job search status
+</div>
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 100%; margin: 0 =
+auto;">
+<tr class=3D"job-status-module-row">
+<td class=3D"job-search-status-option" style=3D"border-bottom-left-radius: =
+4px; border-top-left-radius: 4px; padding-top: 9px; padding-bottom: 6px; fo=
+nt-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', =
+Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-size: 14px; border:=
+ 1px solid #2c73f6;" align=3D"center">
+<a class=3D"change-status-link" href=3D"https://u13051.ct.sendgrid.net/mps2=
+/c/FwE/-zI/t.31o/OL97c_HORR-3-9Cqp7dn2A/h0/ru0YbHDgc3C-2BXqUVUU6zAgKsweYKp1=
+JsTJ-2BfhljGzBppXYKDtcDdzm9Li9Q4idDfY2qTD4vMhleo95EO0EueiNYtPJZ7P9Oo6wnsdE4=
+LIYBxQFLHImzK2qtvYCRESnAAIK-2BPa6U-2FvX6PFbRXJGzBx06mlplpNixlNShURxivw1uROB=
+e588a3w-2FpGE530gv1o5WxC9KM8WTZu9290T8jZQldRDO5tj5YI0gZmlBqgiKiRVFF8uEt4JPo=
+gv6vE4fxWN6Syt8JwEQvWxDCqT8hByYn9T5TT9J-2BOdagJXt-2FRzy6khBR5LXpK1wRSW5eLMV=
+guuBD9iZzwFQROykpt-2BgdMtg0UzZTW-2FWmhHKY3EkUcrvYO5nEwdcaWVKRxnuVXvuWr/6Y4U=
+" style=3D"font-size: 14px; line-height: 20px; text-decoration: none; color=
+: #fff;">Looking
+</a>
+</td>
+
+<td class=3D"job-search-status-option" style=3D"padding-top: 9px; padding-b=
+ottom: 6px; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Hel=
+vetica Neue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-size:=
+ 14px; border-color: #2c73f6; border-style: solid; border-width: 1px 1px 1p=
+x 0;" align=3D"center">
+<a class=3D"change-status-link" href=3D"https://u13051.ct.sendgrid.net/mps2=
+/c/FwE/-zI/t.31o/OL97c_HORR-3-9Cqp7dn2A/h1/ru0YbHDgc3C-2BXqUVUU6zAgKsweYKp1=
+JsTJ-2BfhljGzBppXYKDtcDdzm9Li9Q4idDfY2qTD4vMhleo95EO0EueiEZWo-2BF7J2s5ngPXV=
+T63wE7FSGVTl9Df58tumGZAzolPChCsXXNuabthCo0CeL7BsnPPHa1lRWPrMFVY56pg9vJwedWx=
+0PhAOJN7PkcG1OfIfLg5ysdRoj5YUZDwz7VuE4mqCgWhF69CJFnRXF98M-2FsS2BkzQ9TSbWZRl=
+f35kT-2BhyVElN4o6aHZ6ZLUBITIorMMT8F5vR8tIEAy7dzZ2G3mLcDBikcD5brJDMbkmekaPgf=
+vrLe0VNmM5-2Bs1UdLuh-2FYoxivQGgqFzPX2FwDeGHN5Gyy-2BNPuGOJUJmWkF4PD3-2B/uLY8=
+" style=3D"font-size: 14px; line-height: 20px; text-decoration: none; color=
+: #fff;">Interviewing
+</a>
+</td>
+
+<td class=3D"job-search-status-option selected-job-status" style=3D"padding=
+-top: 9px; padding-bottom: 6px; font-family: -apple-system, system-ui, Blin=
+kMacSystemFont, 'Helvetica Neue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sa=
+ns-serif; font-size: 14px; border-color: #2c73f6; border-style: solid; bord=
+er-width: 1px 1px 1px 0;" align=3D"center" bgcolor=3D"#2c73f6">
+<a class=3D"change-status-link" href=3D"https://u13051.ct.sendgrid.net/mps2=
+/c/FwE/-zI/t.31o/OL97c_HORR-3-9Cqp7dn2A/h2/ru0YbHDgc3C-2BXqUVUU6zAgKsweYKp1=
+JsTJ-2BfhljGzBppXYKDtcDdzm9Li9Q4idDfY2qTD4vMhleo95EO0EueiK0b4nR6gVyBKJ4aXTi=
+UPgAUwG4aWbTEBBH8U6LO7ykQjVcIEQLOzfAL4vFlJ6pxS7mDEf-2BHzNm8m7oZegiCHSInlY36=
+phwQS2KP4hNywAeKmsKWHMG-2FVlSZleudtRDVzbwgevMwXH0TZd33A5T0sSw1BazwGmBecOrP3=
+vjf8bHecGBvtHZKn5ZKMqX0lktte5-2BV1uZamY5XZVKvX8oVVOQ0oMyzpMM9JCwwdnG9v2k5pp=
+cCqfJEhyWbV-2BVLR3f2ys-2Fj3Iu-2BI1w72EtJRu7K8pwwSBsmM2ENOBNLAF7Wp0rM/EICi" =
+style=3D"font-size: 14px; line-height: 20px; text-decoration: none; color: =
+#fff;">Open
+</a>
+</td>
+
+<td class=3D"job-search-status-option" style=3D"border-bottom-right-radius:=
+ 4px; border-top-right-radius: 4px; padding-top: 9px; padding-bottom: 6px; =
+font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue'=
+, Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-size: 14px; borde=
+r-color: #2c73f6; border-style: solid; border-width: 1px 1px 1px 0;" align=
+=3D"center">
+<a class=3D"change-status-link" href=3D"https://u13051.ct.sendgrid.net/mps2=
+/c/FwE/-zI/t.31o/OL97c_HORR-3-9Cqp7dn2A/h3/ru0YbHDgc3C-2BXqUVUU6zAgKsweYKp1=
+JsTJ-2BfhljGzBppXYKDtcDdzm9Li9Q4idDfY2qTD4vMhleo95EO0EueiBCLFk-2FxJ33gFJEV2=
+zP8ejYqGvvfi4ZEMQC8M4lMjygzSZwbi7AMddFkCcmssVw2bu2HmGeSkGzB1XS-2F-2FP3K1yJ0=
+aC-2BfpXqpuW9HUSJcOZzxHOkQbbWjY38qdwEc0wFxMPZBL09jjEi5n-2FPs-2BKggVyj9nykuR=
+33u2XAk7aKQBO90JI-2F-2BdQni1lQNmOqsNijBA9mj0punsicSRWotqoaa-2B0VMSPi0LnVYPt=
+k-2F8X0JZjacXI7WPpYcF2nofYLCrkI-2FWB6zw-2FYaHID4mOFXaLL8K7nvLYG-2B9Ur3tIQV6=
+b4NXgBN/dKh5" style=3D"font-size: 14px; line-height: 20px; text-decoration:=
+ none; color: #fff;">Closed
+</a>
+</td>
+
+</tr>
+</table>
+</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td class=3D"listings" style=3D"border-radius: 8px; font-family: -apple-sys=
+tem, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'Segoe UI'=
+, Roboto, Ubuntu, sans-serif; font-size: 14px; padding: 16px; border: 2px s=
+olid #000a46;" bgcolor=3D"#ffffff">
+<div style=3D"" align=3D"center">
+<img width=3D"480" class=3D"header-image image-border" src=3D"https://angel=
+.co/images/mailers/candidate_notifications/profile_deactivation.png" alt=3D=
+"Profile deactivation" style=3D"max-width: 100% !important; width: 100%; he=
+ight: auto !important;">
+</div>
+<div>
+<p style=3D"font-size: 14px; line-height: 21px; color: #444; margin-bottom:=
+ 1.5em;">
+Hi Guillaume,
+</p>
+<p style=3D"font-size: 14px; line-height: 21px; color: #444; margin-bottom:=
+ 1.5em;">
+We haven't seen you in a while.
+</p>
+<p style=3D"font-size: 14px; line-height: 21px; color: #444; margin-bottom:=
+ 1.5em;">
+We've changed your status from
+<strong style=3D"font-size: 14px; color: #222; font-weight: 700;">
+Starting to look for a new role
+</strong>
+to
+<strong style=3D"font-size: 14px; color: #222; font-weight: 700;">
+Open to new opportunities.
+</strong>
+You=E2=80=99ll appear in fewer searches because we strive to keep responsiv=
+eness high on AngelList.
+</p>
+<p style=3D"font-size: 14px; line-height: 21px; color: #444; margin-bottom:=
+ 1.5em;">
+Still looking for a job?
+</p>
+<p style=3D"font-size: 14px; line-height: 21px; color: #444; margin-bottom:=
+ 1.5em;">
+<a class=3D"button button-full-width" href=3D"https://u13051.ct.sendgrid.ne=
+t/mps2/c/FwE/-zI/t.31o/OL97c_HORR-3-9Cqp7dn2A/h4/ru0YbHDgc3C-2BXqUVUU6zAtPB=
+zylEuodGAuUBzNsn2OcctY1yI7-2Bopsn6fSrSiht2HIyfUVsCwTXTRvoSVfjsRQy5fnO2cxFsn=
+lHOnTbcF-2F74OLCQ8yM54cRBHHdKFgGCkiPj92XLx6084r0LQAGURA7-2Fh7XSvjy2ZRJV4d2o=
+78rc6sdYqzaoRnjaQaFZ3NXMXO9hI-2FS-2BbhkFZynFVpHlxfjZVZn6jSnB9-2BMlDWrku9RwC=
+Bfqwurk8DpGzC08e-2B3ztXll4rG7CohWTVth7iovPUOrmQXa-2BAJ2LvRHAg-2FWzyrc6N8NmN=
+1HH7mGZcebiMh81ljSNgkB4uyJkbk-2FJjXkvQ-3D-3D/eEpM" style=3D"color: #fdfdfd;=
+ text-decoration: none; border-radius: 3px; -webkit-user-select: none; -moz=
+-user-select: none; -ms-user-select: none; user-select: none; cursor: point=
+er; -webkit-tap-highlight-color: transparent; text-align: center; display: =
+block; font-size: 14px; line-height: 21px; outline: none; background-color:=
+ #0f6fff; margin-bottom: 1em; padding: 8px 16px; border: 1px solid #0f6fff;=
+">Keep me active</a>
+</p>
+</div>
+
+</td>
+</tr>
+<tr>
+<td style=3D"font-size: 0; font-family: -apple-system, system-ui, BlinkMacS=
+ystemFont, 'Helvetica Neue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-se=
+rif; padding: 24px 20px 48px;">
+<div class=3D"unsubscribe-container" style=3D"font-weight: 400; color: #fff=
+; font-size: 13px; padding: 5px 0 0;">
+You're receiving this notification because you signed up for
+<a href=3D"https://u13051.ct.sendgrid.net/mps2/c/FwE/-zI/t.31o/OL97c_HORR-3=
+-9Cqp7dn2A/h5/ru0YbHDgc3C-2BXqUVUU6zAg-3D-3D/_Ed6" style=3D"color: #2c73f6;=
+ text-decoration: none;">AngelList</a>
+<br>
+90 Gold St =C2=B7 San Francisco, CA 94133
+<br>
+<a href=3D"https://u13051.ct.sendgrid.net/mps2/c/FwE/-zI/t.31o/OL97c_HORR-3=
+-9Cqp7dn2A/h6/ru0YbHDgc3C-2BXqUVUU6zAoP3zSBKSPQ9UTkyQJE93GwkCz3YpUvCIhr1f4P=
+LX93Lc37-2BILPHonDmL8UndqqKoWX6pR-2FP1iYh-2FO977sqI-2FNNg-2B9ygprRuZiAFVvDa=
+6dHYcqVBoDJFMaEfUwGaojocfbY0sKqq1DVwxC0LAUFVeS2bhITCyVhQm7fge6tUFNPtxtZ1JU9=
+J9-2BI0bLoVIAATQuLUxEizQhbgkgEB2-2BE6FnsAy0E96cB2DOzat99vKsBAOeNK1VcFuxqHec=
+Att6WiNwKCV4xumBuV60dfNVB0d5Qce8cMWFH4zQNKl-2FQeuucaKK8IGpAzilAx8UWyOxQRart=
+REFsm1U89yZ2UnYWy99Y-3D/xOek" style=3D"color: #2c73f6; text-decoration: non=
+e;">Unsubscribe from these notifications</a>
+
+</div>
+</td>
+</tr>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+    </td>
+  </tr>
+</table>
+<![endif]-->
+</div>
+
+
+</div>
+<img src=3D"https://u13051.ct.sendgrid.net/mpss/o/FwE/-zI/t.31o/OL97c_HORR-=
+3-9Cqp7dn2A/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D=
+"height:1px !important;width:1px !important;border-width:0 !important;margi=
+n-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;mar=
+gin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;=
+padding-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+

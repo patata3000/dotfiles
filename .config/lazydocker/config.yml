@@ -1,0 +1,4 @@
+---
+reporting: "on"
+gui:
+  returnImmediately: true

@@ -1,0 +1,12 @@
+account aleia_outlook
+host smtp.office365.com
+port 587
+protocol smtp
+tls on
+tls_starttls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+tls_certcheck on
+auth xoauth2
+user guillaume.attia@aleia.com
+from guillaume.attia@aleia.com
+passwordeval "/usr/bin/python3 /home/guillaume/.local/bin/oauth2_mutt.py /home/guillaume/.local/share/pass/aleia/web/outlook_token_thunderbird.gpg"

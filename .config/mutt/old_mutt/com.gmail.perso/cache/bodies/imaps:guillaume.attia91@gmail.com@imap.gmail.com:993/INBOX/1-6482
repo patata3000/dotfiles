@@ -1,0 +1,314 @@
+Delivered-To: guillaume.attia91@gmail.com
+Received: by 2002:a5e:a80a:0:0:0:0:0 with SMTP id c10csp541876ioa;
+        Mon, 11 May 2020 12:35:11 -0700 (PDT)
+X-Google-Smtp-Source: APiQypLWWzodZTCwdDYeiUAlMZH4toM7kfzu+h7ZvAvky3WHL0S0DlygqQUw1VeSmh7Tx5VFN1FD
+X-Received: by 2002:a17:906:7717:: with SMTP id q23mr14888683ejm.38.1589225711336;
+        Mon, 11 May 2020 12:35:11 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1589225711; cv=none;
+        d=google.com; s=arc-20160816;
+        b=094w2wi4otRZYTAKbuCINyk5AzQQdxr5P5hdr0wkGclP0s3QlkSdrrXecZi9bQfWSg
+         gMjJy0n4vbG7l2z/1THX4Xce+8WYFmXCN9XXpdSs7RRxQsE/2xc+XrnlojTGKKcceWCX
+         5Oxcd+IwzQ3iTPPSBZIszGh2WjQtz28WdHkKsyt8g/cbOKLrrvnmqx6cKDCSdytBCj+U
+         9k8jFjw0Eb4Ek+hU3ic/b8Rw9+/arfuQUiQ9FOG51hPjsyNWEJQCB2K/YZvpwAH/SxNZ
+         x/vUJ6q6LBbW6Xx4k/vbKj95f2WMpnZDwHjL4iZSaVlKeW2c3CS4Y87Jou5Txo/x5m1u
+         78nw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:subject:message-id:to:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=6g1CqQDKvjiZXZNjum0P+b4VB98akdEcUL3Casp9ejs=;
+        b=UFpI5+rOcnR2VIrd6haOJiJLbNDY70SDjT0RnUGtM7diqkce/Iv01vm5vKzMjmpxkj
+         UmPzOwl+r+35oQwydN2MaH7a0h4wVqoBIdhnpjMMHFCqvNY5YKCbKzWcicWujOxM+un7
+         ZOzuVO91KG7JwP5MkFxB7RyDAxt5ycVUqvbpjLmnFwmdVZTRoDVadTmN01aaKOdK05oV
+         KAAzc1p4dezFlOImz+wR5jNqh5wXXOn13YZB9g3hxIoNtvr5k3KPu+DPcStDm85jAJea
+         OG5r6Hk+Sq1NE5w71ZzFlYw/zjyrkkcHnvFyL3+gHOqEoRI+6EeOSqhfPsEDUA/Kk8fL
+         e/kA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.angel.co header.s=m1 header.b="X7Yj/UXj";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Og7Q+mlj;
+       spf=pass (google.com: domain of bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co designates 167.89.11.231 as permitted sender) smtp.mailfrom="bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=angel.co
+Return-Path: <bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co>
+Received: from o7.email.angellist.co (o7.email.angellist.co. [167.89.11.231])
+        by mx.google.com with ESMTPS id gh17si5358406ejb.517.2020.05.11.12.35.10
+        for <guillaume.attia91@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 11 May 2020 12:35:11 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co designates 167.89.11.231 as permitted sender) client-ip=167.89.11.231;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.angel.co header.s=m1 header.b="X7Yj/UXj";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Og7Q+mlj;
+       spf=pass (google.com: domain of bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co designates 167.89.11.231 as permitted sender) smtp.mailfrom="bounces+13051-0d38-guillaume.attia91=gmail.com@em480.email.angel.co";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=angel.co
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=email.angel.co; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:list-unsubscribe; 
+	s=m1; bh=6g1CqQDKvjiZXZNjum0P+b4VB98akdEcUL3Casp9ejs=; b=X7Yj/UX
+	j+7wdu8EV9x5Ha13X4dp/k1ZJ+c3yscW+BXdL+nYPua7HrQ5P1YCXzDTe37EzAKd
+	FLHyvUaME5OBEZTP3U30DzhNO+D/ovakETifngxaDoYVDmHOYzXhSr/T7va9FuSt
+	3SaxeQ5nA1eff+PfnPT0/ehn/NCRtGXNBFX0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:list-unsubscribe:x-feedback-id; 
+	s=smtpapi; bh=6g1CqQDKvjiZXZNjum0P+b4VB98akdEcUL3Casp9ejs=; b=Og
+	7Q+mljjy/O3mggZYbM7a1VaviLXigQZS7BNHBxKw4T/N1FK3lDmmNMdRuKS266hU
+	PvRHXoQgdcCDndIFuUB3NiW1JsiMoJ3ElEysfG/Hnfck4TbPJzahlrHrf+GIkRZy
+	FqK9k5tH7UDA0/XTEdYNwPHkpad3HS9EN61501p8o=
+Received: by filter0309p1iad2.sendgrid.net with SMTP id filter0309p1iad2-6036-5EB9A8ED-24
+        2020-05-11 19:35:09.899639392 +0000 UTC m=+2235165.311175302
+Received: from MTMwNTE (unknown)
+	by ismtpd0002p1sjc2.sendgrid.net (SG) with HTTP id 1QNo1vv5TiG-l1-D1dqqDg
+	Mon, 11 May 2020 19:35:09.706 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Date: Mon, 11 May 2020 19:35:09 +0000 (UTC)
+From: "AngelList Talent" <talent@angel.co>
+Mime-Version: 1.0
+To: guillaume.attia91@gmail.com
+Message-ID: <1QNo1vv5TiG-l1-D1dqqDg@ismtpd0002p1sjc2.sendgrid.net>
+Subject: People are looking at your AngelList Profile
+X-ANGELLIST-ALLOW-PREMAILER: true
+List-unsubscribe: <https://angel.co/l/7c96b5c2462f6115c2bc8ee09b544ab7/2jJtk5>
+X-SG-EID: yG+BIyjlCoWBCFy8SCm7At2z0wJ//z5aNsqESWBKzBnbL5dxSBAVqRJ2WmMRIj2smnDYn2KTO/kTjM
+ +DEi2aLNWbt7NJnjQ5uyxzffHMCcPKQg3Vw/Sx5wlBmiKNF/hwuh7tkkS57c7Rjdh8E3nNpd+cHLK+
+ 14BnI5pst593Mxfoef1lhkNGDiKJMPJQEpvSjDD4HCqP7byNGafd+fDHKIDvndN3SAc2CU3XpqX3Vt
+ k=
+X-SG-ID: ufcf/2ED3+w55AV1woyQyE9T/VY30zcu+JbZB1XbkHYRGlN6LJ0wYkX0O7BH/KbAZ6PXgvn/zV0OGc
+ 3VacjujhZ8r8aor5zwz/xTypVPBf9abMjgrUbwyJgT91ux5jYf
+X-Feedback-ID: 13051:UXl4CtcR5rLnvHsRj7C4EdqWNER+mKoqyLatPrj0Jtg=:UOKHjsKMFZv4aBUblgsl+cRbx+xvPmwA2V1f+Z4R8KU=:SG
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">
+<html style=3D"font-family: -apple-system, system-ui, BlinkMacSystemFont, '=
+Helvetica Neue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-si=
+ze: 14px;">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<style>@media only screen and (max-width:425px) {
+  .dlm81.fft14 .wrapper {
+    padding: 0 0 64px !important;
+  }
+  .dlm81.fft14 .contentCard {
+    padding: 32px 16px !important; border: 1px solid #e7e9eb !important; bo=
+rder-right: none !important; border-left: none !important;
+  }
+}
+@media only screen and (min-device-width:601px) {
+  .dmst22.fje27 .module-container {
+    width: 100%; padding: 12px 20px 24px;
+  }
+  .dlm81.fty78 .container {
+    width: 558px !important;
+  }
+  .dlm81.fty78 .main {
+    padding: 32px !important;
+  }
+  .dlm81.fty78 .main.intro {
+    padding-bottom: 16px !important;
+  }
+  .dlm81.fty78 .footer {
+    padding: 8px 32px 48px !important;
+  }
+}
+@media screen and (max-width:420px) {
+  .dmst22.fje27 .module-container {
+    max-width: none; width: 95%;
+  }
+}
+@media screen and (max-width:520px) {
+  .dmst22.fjl80 .module-container {
+    padding-left: 0; padding-right: 0; width: 100%;
+  }
+}
+@media screen and (min-width:520px) {
+  .dlm81.fte67 img.header-image.image-border {
+    border: 1px solid #e4e7f0; border-radius: 8px;
+  }
+  .dlm81.ftr40 img.header-image.image-border {
+    border: 1px solid #e4e7f0; border-radius: 8px;
+  }
+}
+@media only screen and (min-width:960px) {
+  .dlm81.ftx72 .large-primary-button:hover {
+    background-color: #4b89ca;
+  }
+  .dlm81.ftx72 .medium-primary-button:hover {
+    background-color: #4b89ca;
+  }
+  .dlm81.ftx72 .small-primary-button:hover {
+    background-color: #4b89ca;
+  }
+  .dlm81.ftx72 .medium-secondary-button:hover {
+    color: #28313c; border-color: #b5c3cf;
+  }
+  .dlm81.ftx72 .small-secondary-button:hover {
+    color: #28313c; border-color: #b5c3cf;
+  }
+}
+body {
+font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue'=
+, Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-size: 14px;
+}
+@media screen and (max-width: 520px) {
+  body {
+    width: 100% !important;
+  }
+  img {
+    max-width: 100% !important; height: auto !important;
+  }
+  a {
+    word-break: break-word;
+  }
+  .second-container {
+    padding-left: 0px !important; padding-right: 0px !important;
+  }
+}
+@media only screen and (min-device-width: 601px) {
+  .container {
+    width: 520px !important;
+  }
+  .listings {
+    padding: 32px !important;
+  }
+}
+</style>
+</head>
+<body style=3D"font-family: -apple-system, system-ui, BlinkMacSystemFont, '=
+Helvetica Neue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-si=
+ze: 14px;"><div class=3D" dlm81 layouts-mailers fte67 talent_blue _a">
+
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" name=3D"viewpor=
+t">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible">
+
+
+
+
+
+
+<div style=3D"background-color: #000A46;">
+<!--[if (gte mso 9)|(IE)]>
+<table width=3D"600" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+  <tr>
+    <td>
+<![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"container"=
+ style=3D"max-width: 560px; width: 100%; margin-left: auto; margin-right: a=
+uto;">
+<tr>
+<td class=3D"logo-container" style=3D"padding-top: 20px; padding-bottom: 12=
+px; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica N=
+eue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-serif; font-size: 14px;" =
+align=3D"center">
+<img width=3D"147" border=3D"0" class=3D"logo-image" src=3D"https://angel.c=
+o/images/static_pages/logo/AngelList_White_Lockup_Large_Victory_Hand.png" a=
+lt=3D"Angellist white lockup large victory hand">
+</td>
+</tr>
+<tr>
+<td class=3D"listings" style=3D"border-radius: 8px; font-family: -apple-sys=
+tem, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'Segoe UI'=
+, Roboto, Ubuntu, sans-serif; font-size: 14px; padding: 16px; border: 2px s=
+olid #000a46;" bgcolor=3D"#ffffff">
+<div>
+<h1 style=3D"padding-bottom: 10px; font-size: 16px; line-height: 20px; font=
+-weight: 500;">
+=F0=9F=91=80 Someone with the title
+<span style=3D"text-decoration: underline;">Founder</span>
+viewed your profile
+</h1>
+<p style=3D"margin-bottom: 0; font-size: 14px; line-height: 21px; color: #4=
+44;">
+You=E2=80=99ve gotten
+<strong style=3D"font-size: 14px; color: #222; font-weight: 700;">
+8 views
+</strong>
+in the last three months.
+If you=E2=80=99re looking for a job or just trying to network, use this cha=
+nce to start a conversation.
+</p>
+<p class=3D"u-gray" style=3D"font-size: 14px; line-height: 21px; color: #99=
+9; margin-bottom: 1.5em;">
+People will see you as
+<strong style=3D"color: #999; font-size: 14px; font-weight: 700;">NLP Inter=
+nship</strong>
+at
+<strong style=3D"color: #999; font-size: 14px; font-weight: 700;">Universit=
+y Paris</strong>
+.
+</p>
+<p style=3D"font-size: 14px; line-height: 21px; color: #444; margin-bottom:=
+ 1.5em;" align=3D"center">
+<a class=3D"button" href=3D"https://u13051.ct.sendgrid.net/mps2/c/IgE/-zI/t=
+.31o/L4OU9HgsRt6zQE6v3d5YVA/h0/ru0YbHDgc3C-2BXqUVUU6zAmhutb0OQBthVKmyDPZ3vT=
+gGZ0m2rNIiSwQbcqGVyaTf3pAN-2F8Y20pvUgN-2FeOyTtK3yZsEbHcvbghph62Bjb-2B3ylFTZ=
+Rzs0WpThlBt6eFBnZWbiQpxBPnx7YUFbEyvvQKtZwt5bq-2FDSY19f6znRlVFKB340kmUAkdLZp=
+QbxicGv5ryv5d9RaaMvDigtNMDY7iWxcIrLxRFtcypZfRs1Qn7wXJt-2BcRxUXkWvLXSK0venAN=
+XLSL04PO2ZYnMfG9mbVXQ-3D-3D/Pwm4" style=3D"color: #fdfdfd; text-decoration:=
+ none; border-radius: 3px; -webkit-user-select: none; -moz-user-select: non=
+e; -ms-user-select: none; user-select: none; cursor: pointer; -webkit-tap-h=
+ighlight-color: transparent; text-align: center; display: inline-block; fon=
+t-size: 14px; line-height: 21px; outline: none; background-color: #0f6fff; =
+margin-bottom: 1em; padding: 8px 16px; border: 1px solid #0f6fff;">See who=
+=E2=80=99s looking</a>
+<a class=3D"button button-secondary" href=3D"https://u13051.ct.sendgrid.net=
+/mps2/c/IgE/-zI/t.31o/L4OU9HgsRt6zQE6v3d5YVA/h1/ru0YbHDgc3C-2BXqUVUU6zAtKXQ=
+rOL04Oob7TQPdiwlOeC6WRKiWZPQcYWMXta931OuZ4M1X835CmM7b1a475iCzAZsM3nyLY-2BGh=
+R7ijT-2BuhIAW7S2aXrsCERVQo3SUHXaSgnNpPAc4kTK5tYsrWFkTMN1QdHcKKpSFQxDlwmkyby=
+fkGi64yzVZt3459kROoVzs8TiE3iPi-2FYWrdUtfhf9SEemqW7tbwPuhhCDMraip1DlZxVjweiS=
+Jfe-2BH8IeAU090nBF3YtjvcuHvrnQ6xBlYA-3D-3D/r2gb" style=3D"color: #0f6fff; t=
+ext-decoration: none; border-radius: 3px; -webkit-user-select: none; -moz-u=
+ser-select: none; -ms-user-select: none; user-select: none; cursor: pointer=
+; -webkit-tap-highlight-color: transparent; text-align: center; display: in=
+line-block; font-size: 14px; line-height: 21px; outline: none; background-c=
+olor: #fdfdfd; margin-bottom: 1em; padding: 8px 16px; border: 1px solid #0f=
+6fff;">Update my profile</a>
+</p>
+</div>
+
+</td>
+</tr>
+<tr>
+<td style=3D"font-size: 0; font-family: -apple-system, system-ui, BlinkMacS=
+ystemFont, 'Helvetica Neue', Helvetica, 'Segoe UI', Roboto, Ubuntu, sans-se=
+rif; padding: 24px 20px 48px;">
+<div class=3D"unsubscribe-container" style=3D"font-weight: 400; color: #fff=
+; font-size: 13px; padding: 5px 0 0;">
+You're receiving this notification because you signed up for
+<a href=3D"https://u13051.ct.sendgrid.net/mps2/c/IgE/-zI/t.31o/L4OU9HgsRt6z=
+QE6v3d5YVA/h2/ru0YbHDgc3C-2BXqUVUU6zAg-3D-3D/mgjQ" style=3D"color: #2c73f6;=
+ text-decoration: none;">AngelList</a>
+<br>
+90 Gold St =C2=B7 San Francisco, CA 94133
+<br>
+<a href=3D"https://u13051.ct.sendgrid.net/mps2/c/IgE/-zI/t.31o/L4OU9HgsRt6z=
+QE6v3d5YVA/h3/ru0YbHDgc3C-2BXqUVUU6zAil8a2c-2B-2B4Rj-2F14B3zfKtndeuDyIfLY5h=
+GlNGaqXZlos96sLnwq0t3-2FGUOgeUflHX57CFA10exCZR5Q0Mr-2FgiYZzDz2ZgybGvbUJdL-2=
+BrNL-2BnFs4LrGLv8iRBXuIaA7MA-2FWz4q8BkAVrLrjKYnVtbJ7xsAiK0SFyl7vxq-2FibnpSp=
+SeSZGD7XT2SwjaACLQgJhR6hVKBdFQvlt9vd6xTj6sD35fZTIzA7pcr0aqaBSG57aHBjpVHN5UV=
+dKFcCQTy4cqxxr9OOFFSsPywHEgPafcf4-3D/UzyV" style=3D"color: #2c73f6; text-de=
+coration: none;">Unsubscribe from these notifications</a>
+
+</div>
+</td>
+</tr>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+    </td>
+  </tr>
+</table>
+<![endif]-->
+</div>
+
+
+</div>
+<img src=3D"https://u13051.ct.sendgrid.net/mpss/o/IgE/-zI/t.31o/L4OU9HgsRt6=
+zQE6v3d5YVA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D=
+"height:1px !important;width:1px !important;border-width:0 !important;margi=
+n-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;mar=
+gin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;=
+padding-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+

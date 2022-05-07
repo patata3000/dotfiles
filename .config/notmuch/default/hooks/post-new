@@ -1,0 +1,13 @@
+#!/bin/sh
+notmuch tag +aleia_outlook -- path:aleia/outlook/**
+notmuch tag +aleia_outlook_merged -- \
+  folder:aleia/outlook/INBOX \
+  and from:gitlab@mg.gitlab.com \
+  and body:\"Assignee: Guillaume Attia\" \
+  and body:/Merge request was merged/
+
+
+
+notmuch tag +aleia_gmail -- is:new path:aleia/gmail/**
+notmuch tag +perso_gmail -- is:new path:perso/gmail/**
+notmuch tag +perso_outlook -- is:new path:perso/outlook/**

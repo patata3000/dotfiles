@@ -1,0 +1,120 @@
+Delivered-To: guillaume.attia91@gmail.com
+Received: by 2002:a5e:a80a:0:0:0:0:0 with SMTP id c10csp3867733ioa;
+        Mon, 20 Apr 2020 07:09:12 -0700 (PDT)
+X-Received: by 2002:a17:90a:930c:: with SMTP id p12mr1720024pjo.64.1587391752373;
+        Mon, 20 Apr 2020 07:09:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1587391752; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ASYa/KJVQglFF2Bva2UXk143HzmBb3D9t4OkDghLGjE5Ea6rRonYAYAP20FDaxP9LU
+         seqvk5cWqG6Q3W8nYjlSglR8WwlHmLNO5oQvwt9ihrmLrPsOljkPTptbrjMKx3avD7dx
+         NVS/xast38USQbwjKKLI5bey8hEFaydFMDWw25EI4NBtfR0qqQh/qaUJmZX4sreOBhMk
+         8+2Q3Q5WNknycNfqsyVpYhzk/yALX6zpTkyN2JiqDyzNepslWMDTBOpjzbiDP1YSrbr4
+         wd3WQxNfC2Kh/Mg1mAC4oqfiL3SbeIGV8FVSq7b0zJ8PrxMCzEol9rliaVWP507Va/vW
+         rQtQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:date:message-id:subject:references:reply-to:to:from
+         :dkim-signature;
+        bh=+qj+QqVPFcgWPMo1FrN22la+DD3qmhIbesRZW1dW9es=;
+        b=bDMKTYcXFAJ1WleUExv3vNagharo/Ia7JJk/1oeDK1H/cCC8WiUaaEhuAIHkKSoowN
+         klWPHD6MwmMrZhVBAK9Zgk2sHV+7kv4vWSIUuWuMwRpHP6Fyicus+BEi4dOjxbQUsSnY
+         9hEd/Q45fELxzyyPy3oCbhw93I6jAZnHp7BtEQxdPe7D20gGZ4KakBkCE1qpw8amK+YK
+         8AZ5rLmVtkUAmNDU9iRp2D42nZl6Hh/ccVRmcZoiqZT5nOBtcCrMMhdPk3OTw1So4yfF
+         EMFVSYRyWbRYnAYwTu18lp50Be4VyP9Ei//SYerUDYryW70a1/HyO/Xd+lWQKYfuJhWB
+         X3vg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ergodox-ez-com.20150623.gappssmtp.com header.s=20150623 header.b=quaAzDlL;
+       spf=pass (google.com: domain of contact@ergodox-ez.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=contact@ergodox-ez.com
+Return-Path: <contact@ergodox-ez.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id i192sor1481840pgc.62.2020.04.20.07.09.12
+        for <guillaume.attia91@gmail.com>
+        (Google Transport Security);
+        Mon, 20 Apr 2020 07:09:12 -0700 (PDT)
+Received-SPF: pass (google.com: domain of contact@ergodox-ez.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ergodox-ez-com.20150623.gappssmtp.com header.s=20150623 header.b=quaAzDlL;
+       spf=pass (google.com: domain of contact@ergodox-ez.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=contact@ergodox-ez.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ergodox-ez-com.20150623.gappssmtp.com; s=20150623;
+        h=from:to:reply-to:references:subject:message-id:date:mime-version;
+        bh=+qj+QqVPFcgWPMo1FrN22la+DD3qmhIbesRZW1dW9es=;
+        b=quaAzDlLO0AOWbaPfYgnSni7ZysC8P/tAgvaXSt1PIeFjGg5MH+035irR3/6Nf/4AY
+         Cu2xD8JOKEwOBUA+UBr/U3QC6j3DMUOL06MpAvjxKVEHHa+MGygPAg7gyHZbNbyiwC3l
+         tGdBNtvylgUxIJlzX6TFgL9yiDcNzENiGZTtjJCQrDI7eYuBk5rk/AiqmZYBGV6of8Gr
+         pEWRmshkXDO/BSqx7DVb0ugVrj5OERIwTXI/FjI4dsD3PaN5pIzOlKq6yAb6AEHFXZ7d
+         9BTqM3yALFLMF/oOHSj0ZZedo6TXJq3B7sWQVA9uxOIIb2mv3ewUHt1yNp5NgBhhSt68
+         jNjA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:to:reply-to:references:subject:message-id
+         :date:mime-version;
+        bh=+qj+QqVPFcgWPMo1FrN22la+DD3qmhIbesRZW1dW9es=;
+        b=DHukQ86gMRSsfzaewUGak7AuWmeIXiak7VPKPWBse34mbmn/oY8REkW/8U+gJ+I7n1
+         dr3Fwn2yxmvjq0h2rkY78C/+UyF3eVgb9KdCrd0EowQwWg4oUk4kzNNWO8opkY8//sv7
+         KrgfaG+1LaIHuTiX2nS3wlDBbUyV7M52gde/lofeUvUTOKQ3Ks0m8VVQMjRzYm5EG5A4
+         C6yGskwjD40rRikRQRXMBNRFP1zCqGSvQCL0DPnoiJXx4fvxxyZDmUfQWv5rhpNYyhdp
+         uidjkm5XKVSGKU8nkNDPQ+pow7eLC4UwkN6opISqggVdfqiSrTnGkCJ3e46v6LKliYG0
+         V0Jg==
+X-Gm-Message-State: AGi0PuY44/KDLLJuwFApyrCoCjQ240+VDaFfuLFVUsSNPGVyM2sepaZz
+	1J0TFIiKf6XH9rdUDNAACvM/nSLIzOE=
+X-Google-Smtp-Source: APiQypILqlm3sOcw54EfyaGDArBEGShly5+g3cHl+BynWUPWhHjwEd+9KusZCvJlO313ptZ+SDcziw==
+X-Received: by 2002:a65:4107:: with SMTP id w7mr15829657pgp.438.1587391751469;
+        Mon, 20 Apr 2020 07:09:11 -0700 (PDT)
+Return-Path: <contact@ergodox-ez.com>
+Received: from front-smtp (out-5.frontapp.com. [52.53.62.29])
+        by smtp.gmail.com with ESMTPSA id m11sm1319013pjf.14.2020.04.20.07.09.10
+        for <guillaume.attia91@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 20 Apr 2020 07:09:10 -0700 (PDT)
+Content-Type: multipart/alternative;
+ boundary="----sinikael-?=_1-15873917500670.6461575656204375"
+X-Front-ID: 6d853137abeabd7112920eaafe646e11@frontapp.com
+From: Tisha Stacey <contact@ergodox-ez.com>
+To: guillaume.attia91@gmail.com
+Reply-To: contact@ergodox-ez.com
+References: <6d853137abeabd7112920eaafe646e11@frontapp.com>
+Subject: Shipping for your recent ErgoDox EZ order
+Message-ID: <6d853137abeabd7112920eaafe646e11@frontapp.com>
+X-Mailer: Front (1.0; +http://frontapp;
+ +msgid=6d853137abeabd7112920eaafe646e11@frontapp.com)
+Date: Mon, 20 Apr 2020 14:09:10 +0000
+MIME-Version: 1.0
+
+------sinikael-?=_1-15873917500670.6461575656204375
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hello! Thanks for your recent orders!
+
+
+The shipping team asked me to get =
+in touch with you because, if possible, they'd like to ship your order =
+(SHO-#27635) via UPS. Do you know if you can receive UPS deliveries at your=
+ address?
+
+
+Just let me know. Thanks!
+
+=E2=80=94
+Tisha Stacey,=20
+Customer Service,
+ZSA Technology Labs Inc.
+------sinikael-?=_1-15873917500670.6461575656204375
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!--[if (gte mso 9)|(IE)]><style type=3D"text/css">.=
+main-style-b3ceab25f1cb2d90fa88 { font-family: sans-serif; font-size: 11pt;=
+ /* inherit */ }</style><![endif]--><div style=3D"/* inherit */" =
+class=3D"main-style-b3ceab25f1cb2d90fa88"><div>Hello! Thanks for your =
+recent orders!</div><div><br /></div><div>The shipping team asked me to get=
+ in touch with you because, if possible, they'd like to ship your order =
+(SHO-#27635) via UPS. Do you know if you can receive UPS deliveries at your=
+ address?</div><div><br /></div><div>Just let me know. Thanks!=
+</div><br><div class=3D"front-signature fa-uid_6d853137abeabd7112920eaafe64=
+6e11"><div>=E2=80=94</div><div>Tisha Stacey, </div><div>Customer Service,=
+</div><div>ZSA Technology Labs Inc.</div><div><br /></div></div></div><img =
+src=3D"https://app.frontapp.com/api/1/noauth/companies/ergodox_ez/seen/msg_=
+b4ltphh/han_18j6k79/d5b474b6.gif" style=3D"width: 1px; height: =
+1px">
+------sinikael-?=_1-15873917500670.6461575656204375--

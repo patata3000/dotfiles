@@ -1,0 +1,3 @@
+text/html; qutebrowser --target window %s; needsterminal; nametemplate=%s.html
+image/*; vimiv %s
+video/*; mpv %s

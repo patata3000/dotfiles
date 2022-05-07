@@ -36,3 +36,9 @@ source $HOME/.config/nvim/plug-config/vim-rest-console.vim
 
 " Isort
 source $HOME/.config/nvim/plug-config/isort.vim
+
+" Treesitter
+source $HOME/.config/nvim/plug-config/tree-sitter.vim
+
+" Neorg
+source $HOME/.config/nvim/plug-config/neorg.vim

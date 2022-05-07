@@ -34,4 +34,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 "    Plug 'folke/which-key.nvim'
     Plug 'diepm/vim-rest-console'
     Plug 'fisadev/vim-isort'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-neorg/neorg' | Plug 'nvim-lua/plenary.nvim'
 call plug#end()

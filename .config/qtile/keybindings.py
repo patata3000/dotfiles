@@ -90,7 +90,7 @@ application_keys = [
     Key(
         [MOD],
         "v",
-        lazy.spawn(f"term_exec nvim {HOME_DIRECTORY}/Documents/todo/todo.txt"),
+        lazy.spawn(f"term_exec nvim -c NeorgStart"),
         desc="TODO list",
     ),
     Key(  # Not working without widget probably

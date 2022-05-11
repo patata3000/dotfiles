@@ -42,3 +42,6 @@ source $HOME/.config/nvim/plug-config/tree-sitter.vim
 
 " Neorg
 source $HOME/.config/nvim/plug-config/neorg.vim
+
+" Rustfmt
+source $HOME/.config/nvim/plug-config/rustfmt.vim

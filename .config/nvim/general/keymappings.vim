@@ -63,12 +63,6 @@ noremap <A-e> :bprev<CR>
 noremap <A-n> :bnext<CR>
 noremap <leader>bd :BD<CR>
 
-" Fuzzy search
-noremap <leader>ff :Files<CR>
-noremap <leader>fb :Ag 
-noremap <leader>fc :Ag <c-r>=expand("<cword>")<CR><CR>
-noremap <leader>bb :Buffers<CR>
-
 " Tab management
 noremap <leader>tn :tabnew<CR>
 noremap <leader>td :tabclose<CR>
@@ -80,3 +74,6 @@ noremap <leader>to :+tabmove<CR>
 " Go to definition
 noremap <leader>dt :vsplit<CR><C-w>Tgd
 noremap <leader>ds :vsplit<CR>gd
+
+noremap <C-n> <C-n>
+noremap <C-p> <C-e>

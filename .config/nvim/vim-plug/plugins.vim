@@ -1,8 +1,8 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
     " Track the engine.
-    Plug 'SirVer/ultisnips'
+    " Plug 'SirVer/ultisnips'
     " Snippets are separated from the engine. Add this if you want them:
-    Plug 'honza/vim-snippets'
+    " Plug 'honza/vim-snippets'
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     Plug 'rust-lang-nursery/rustfmt'

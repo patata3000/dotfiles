@@ -48,3 +48,6 @@ source $HOME/.config/nvim/plug-config/auto-pairs.vim
 
 " Rustfmt
 source $HOME/.config/nvim/plug-config/rustfmt.vim
+
+" Rustfmt
+source $HOME/.config/nvim/plug-config/ultisnips.vim

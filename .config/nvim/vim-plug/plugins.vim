@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     Plug 'rust-lang-nursery/rustfmt'
+    Plug 'rust-lang/rust.vim'
     " File Explorer
     Plug 'scrooloose/NERDTree'
     " Vim surround

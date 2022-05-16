@@ -77,3 +77,5 @@ noremap <leader>ds :vsplit<CR>gd
 
 noremap <C-n> <C-n>
 noremap <C-p> <C-e>
+
+nnoremap <leader>h :vert<space>help<space>

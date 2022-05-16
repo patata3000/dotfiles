@@ -1,0 +1,47 @@
+= TOC
+
+* Configurations
+** Script to open a config file
+* Password management
+** Write an application to handle passwords on computer
+** Sync passwords with syncthings
+** Sort passwords by utility and not by web
+* Mail
+** Create configs
+*** Perso
+    [ ] gmail: guillaume.attia91@gmail.com
+    [ ] outlook: guillaume.attia@hotmail.fr
+*** Aleia
+    [ ] gmail: guillaumeattia@gmail.com
+** Ajouter dmenu pour choisir le destinataire dans Neomutt
+** Ajouter le nom du sender et le titre du mail dans la notif de reception
+* Neovim
+** What is preview window
+** Plugins
+*** Coc
+**** Check coc settings
+***** nnoremap <silent> K :call ShowDocumentation()<CR>
+***** nmap <leader>rn <Plug>(coc-rename)
+***** xmap <leader>f  <Plug>(coc-format-selected)
+***** nmap <leader>f  <Plug>(coc-format-selected)
+*** {https://github.com/hrsh7th/nvim-cmp}
+   Completion engine plugin
+*** {https://github.com/rockerBOO/awesome-neovim}
+   List of plugins for neovim
+**** neopret
+    Interpreter inside neovim
+** python
+*** Add search for python methods or classes
+** Learn Lua for neovim
+* Qtile
+** Repair system tray
+** Search a word in google translate from clipboard
+* Learning
+** Understand ssl and certificate and tls
+** Learn gpg better
+* Network
+** Bug: find out why network gets interrupted
+* Tmux
+** Configure it
+* Calendar
+  Find a calendar application

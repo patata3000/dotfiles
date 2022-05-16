@@ -17,6 +17,9 @@
 ** Ajouter le nom du sender et le titre du mail dans la notif de reception
 * Neovim
 ** What is preview window
+   <leader>h window
+** What is float window
+   <leader>h window
 ** Plugins
 *** Coc
 **** Check coc settings

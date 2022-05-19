@@ -167,12 +167,12 @@ select_group_keys = [
     for group in groups
 ]
 move_window_group_keys = [
-    # mod1 + shift + letter of group = switch to & move focused window
+    # mod1 + shift + letter of group = move focused window
     # to group
     Key(
-        [MOD, "shift"],
+        [MOD, SHIFT],
         group.name,
-        lazy.window.togroup(group.name, switch_group=True),
+        lazy.window.togroup(group.name),
         desc=f"Switch to & move focused window to group {group.name}",
     )
     # Or, use below if you prefer not to switch to that group.

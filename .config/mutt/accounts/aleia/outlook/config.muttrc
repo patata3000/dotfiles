@@ -22,12 +22,12 @@ set my_nmq_gitlab = "folder:aleia/outlook/INBOX and from:gitlab@mg.gitlab.com"
 set my_nmq_google_calendar = "folder:aleia/outlook/INBOX and from:calendar-notification@google.com"
 
 
+virtual-mailboxes "Unread" "notmuch://?query=tag:unread"
 virtual-mailboxes "Inbox" "notmuch://?query=folder:aleia/outlook/INBOX \
   and not ($my_nmq_confluence) \
   and not ($my_nmq_jira) \
   and not ($my_nmq_google_calendar) \
   and not ($my_nmq_gitlab)"
-virtual-mailboxes "Unread" "notmuch://?query=tag:unread"
 virtual-mailboxes "Sent" "notmuch://?query=folder:aleia/outlook/sent"
 virtual-mailboxes "Draft" "notmuch://?query=folder:aleia/outlook/draft"
 virtual-mailboxes "Trash" "notmuch://?query=folder:aleia/outlook/trash"

@@ -33,6 +33,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'neomake/neomake'
     Plug 'psf/black', { 'branch': 'stable' }
+    " Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
+    " Plug 'averms/black-nvim'
     " Kill buffer without killing window
     Plug 'qpkorr/vim-bufkill'
     Plug 'tpope/vim-fugitive'

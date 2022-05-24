@@ -1,6 +1,9 @@
 " set leader key
 " let g:mapleader = "\<Space>" " Duplicate keys/mappings.vim
 
+" Python support
+let g:python3_host_prog = "~/.local/share/pyenv/versions/py3nvim/bin/python"
+
 syntax enable                           " Enables syntax highlighing
 " Undo will still work after closing neovim
 " set formatoptions-=cro                  " Stop newline continution of comments
@@ -48,5 +51,3 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 cmap w!! w !sudo tee %
 
 
-" Python support
-let g:python3_host_prog = "~/.local/share/pyenv/versions/py3nvim/bin/python"

@@ -1,8 +1,8 @@
-" Plugins
-source $HOME/.config/nvim/vim-plug/plugins.vim
-
 " General settings
 source $HOME/.config/nvim/general/settings.vim
+
+" Plugins
+source $HOME/.config/nvim/vim-plug/plugins.vim
 
 " Neomake settings
 source $HOME/.config/nvim/plug-config/neomake.vim
@@ -49,5 +49,8 @@ source $HOME/.config/nvim/plug-config/auto-pairs.vim
 " Rustfmt
 source $HOME/.config/nvim/plug-config/rustfmt.vim
 
-" Rustfmt
+" Utilsnips
 source $HOME/.config/nvim/plug-config/ultisnips.vim
+
+" Fzf
+source $HOME/.config/nvim/plug-config/fzf.vim

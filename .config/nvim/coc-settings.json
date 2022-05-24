@@ -15,6 +15,5 @@
   "snippets.ultisnips.directories": [
     "UltiSnips",
     "~/.config/nvim/utils/snips"
-  ],
-  "python.formatting.provider": "black"
+  ]
 }

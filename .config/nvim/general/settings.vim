@@ -11,7 +11,7 @@ syntax enable                           " Enables syntax highlighing
 set autoindent                          " Good auto indent
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set cmdheight=4                         " More space for displaying messages
-set colorcolumn=81                      " Set max width
+set colorcolumn=89                      " Set max width
 set conceallevel=0                      " So that I can see `` in markdown files
 set cursorline                          " Enable highlighting of the current line
 set encoding=utf-8                      " The encoding displayed
@@ -44,6 +44,7 @@ set ttimeout
 set undofile
 set updatetime=300                      " Faster completion
 
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:.
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 

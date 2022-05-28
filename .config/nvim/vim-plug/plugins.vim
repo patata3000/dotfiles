@@ -14,7 +14,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Coc
-    Plug 'neoclide/coc.nvim', {'branch': 'master', 'do':'yarn install --frozen-lockfile'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do':'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Themes
     Plug 'joshdick/onedark.vim'
@@ -32,7 +33,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mileszs/ack.vim'
 
     Plug 'neomake/neomake'
-    Plug 'psf/black', { 'branch': 'stable' }
+    Plug 'psf/black' " , { 'branch': 'stable' }
     " Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
     " Plug 'averms/black-nvim'
     " Kill buffer without killing window

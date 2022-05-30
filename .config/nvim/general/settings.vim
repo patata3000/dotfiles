@@ -47,8 +47,3 @@ set updatetime=300                      " Faster completion
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:.
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
-
-" You can't stop me
-cmap w!! w !sudo tee %
-
-

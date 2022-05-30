@@ -70,12 +70,11 @@ noremap <A-y> :tabprevious<CR>
 noremap <A-o> :tabnext<CR>
 noremap <leader>ty :-tabmove<CR>
 noremap <leader>to :+tabmove<CR>
-
-" Go to definition
 noremap <leader>dt :vsplit<CR><C-w>Tgd
 noremap <leader>ds :vsplit<CR>gd
 
 noremap <C-n> <C-n>
 noremap <C-p> <C-e>
 
-nnoremap <leader>h :vert<space>help<space>
+" You can't stop me
+cmap w!! w !sudo tee %

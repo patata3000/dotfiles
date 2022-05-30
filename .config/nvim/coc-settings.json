@@ -10,8 +10,19 @@
     "python",
     "rust"
   ],
+  "pyright.enable": true,
   "python.linting.enabled": true,
-  "python.linting.pylintEnabled": false,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintPath": "/home/guillaume/.local/share/pyenv/versions/py3nvim/bin/pylint",
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": "/home/guillaume/.local/share/pyenv/versions/py3nvim/bin/flake8",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/home/guillaume/.local/share/pyenv/versions/py3nvim/bin/black",
+  "python.formatting.blackArgs": [
+    "-l",
+    "80"
+  ],
+  "python.venvPath": "/home/guillaume/.local/share/pyenv/versions/",
   "snippets.ultisnips.directories": [
     "UltiSnips",
     "~/.config/nvim/utils/snips"

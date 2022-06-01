@@ -27,7 +27,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'joshdick/onedark.vim'
     Plug 'morhetz/gruvbox'
     Plug 'mangeshrex/everblush.vim'
+    Plug 'sainnhe/sonokai'
+    Plug 'glepnir/oceanic-material'
     Plug 'sainnhe/everforest'
+    Plug 'rhysd/vim-color-spring-night'
+    " Airline
     Plug 'vim-airline/vim-airline' " Airline.
     Plug 'vim-airline/vim-airline-themes' " Airline themes.
 call plug#end()

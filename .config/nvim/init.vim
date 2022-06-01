@@ -20,7 +20,11 @@ source $HOME/.config/nvim/plug-config/vim-rest-console.vim " Vim Rest Console se
 source $HOME/.config/nvim/plug-config/vim-surround.vim " Vim-surround settings
 
 " Themes
-" source $HOME/.config/nvim/themes/onedark.vim
-" source $HOME/.config/nvim/themes/gruvbox.vim
-" source $HOME/.config/nvim/themes/everblush.vim
+source $HOME/.config/nvim/themes/onedark.vim
+source $HOME/.config/nvim/themes/gruvbox.vim
+source $HOME/.config/nvim/themes/everblush.vim
 source $HOME/.config/nvim/themes/everforest.vim
+source $HOME/.config/nvim/themes/oceanic-material.vim
+source $HOME/.config/nvim/themes/sonokai.vim
+
+source $HOME/.config/nvim/general/colorscheme.vim " Colorscheme

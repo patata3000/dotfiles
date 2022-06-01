@@ -18,6 +18,7 @@ set encoding=utf-8                      " The encoding displayed
 set expandtab                           " Converts tabs to spaces
 set fileencoding=utf8                   " The encoding written to file
 set foldmethod=indent                   " Define folding rule
+set foldlevel=10                   " Define folding rule
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set ignorecase
 set iskeyword+=-                      	" treat dash separated words as a word text object"
@@ -43,7 +44,6 @@ set tabstop=2                           " Insert 2 spaces for a tab
 set ttimeout
 set undofile
 set updatetime=300                      " Faster completion
-
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:.
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

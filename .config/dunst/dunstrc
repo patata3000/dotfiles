@@ -1,10 +1,10 @@
 [global]
-    max_icon_size=100
+    max_icon_size=50
     icon_position = left
     # icon_path = "/home/guillaume/.local/share/icons/Adwaita/16x16/status/:/home/guillaume/.local/icons/Adwaita/16x16/devices"
     icon_path = "/usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/Adwaita/32x32/devices/"
 
-    font = Monospace 12
+    font = Monospace 10
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -24,7 +24,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%a</b>\n%s\n%b"
+    format = "<b>%a</b>\n%s\n%b%p"
 
     # Display indicators for URLs (U) and actions (A).
     show_indicators = yes
@@ -67,16 +67,18 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "600x6-30+20"
+    width = (200, 400)
+    height = 800
+    notification_limit = 10
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
-    transparency = 40
+    transparency = 10
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
     # Set to 0 to disable.
-    idle_threshold = 120
+    idle_threshold = 60
 
     # Which monitor should the notifications be displayed on.
     monitor = *
@@ -107,10 +109,10 @@
     separator_height = 2
 
     # padding between text and separator
-    padding = 7
+    padding = 4
 
     # horizontal padding
-    horizontal_padding = 6
+    horizontal_padding = 4
 
     # Define a color for the separator.
     # possible values are:
@@ -130,7 +132,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 4
+    corner_radius = 2
 
 
     # dmenu path
@@ -140,7 +142,7 @@
     browser = /usr/bin/qutebrowser --target auto
 
 
-    frame_width = 3
+    frame_width = 1
     frame_color = "#aaaaaa"
 
 [shortcuts]

@@ -34,3 +34,4 @@ settings:
   content.register_protocol_handler:
     https://outlook.live.com?mailtouri=%25s: true
     https://outlook.office.com?mailtouri=%25s: true
+    https://outlook.office365.com?mailtouri=%25s: true

@@ -22,6 +22,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-neorg/neorg'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'ggandor/leap.nvim'
+    " Plug 'lukas-reineke/indent-blankline.nvim' " Indent guide
 
     " Themes
     Plug 'joshdick/onedark.vim'

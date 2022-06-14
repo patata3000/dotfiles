@@ -30,6 +30,7 @@ bind pager o next-subthread
 bind pager y previous-subthread
 bind pager n next-line
 bind pager e previous-line
+macro pager d '<exit><delete-message>'
 
 bind attach,index,pager Y previous-page
 bind attach,index,pager O next-page

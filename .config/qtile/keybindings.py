@@ -66,6 +66,10 @@ select_windows_keys = [
     Key([MOD], "y", lazy.layout.left(), desc="Move focus left in stack pane"),
     Key([MOD], "o", lazy.layout.right(), desc="Move focus right in stack pane"),
 ]
+select_screen_keys = [
+    Key([MOD, CONTROL], "y", lazy.to_screen(0)),
+    Key([MOD, CONTROL], "o", lazy.to_screen(1)),
+]
 application_keys = [
     Key(
         [MOD],
@@ -183,6 +187,7 @@ move_window_group_keys = [
 ]
 keys = [
     *select_windows_keys,
+    *select_screen_keys,
     *move_windows_keys,
     *system_control_keys,
     *resize_keys,

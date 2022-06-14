@@ -18,6 +18,7 @@ source $HOME/.config/nvim/plug-config/tree-sitter.vim " Treesitter
 source $HOME/.config/nvim/plug-config/ultisnips.vim " Utilsnips
 source $HOME/.config/nvim/plug-config/vim-rest-console.vim " Vim Rest Console settings
 source $HOME/.config/nvim/plug-config/vim-surround.vim " Vim-surround settings
+" source $HOME/.config/nvim/plug-config/indent-blankline.vim " Vim-surround settings
 
 " Themes
 source $HOME/.config/nvim/themes/onedark.vim

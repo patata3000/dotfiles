@@ -1,20 +1,16 @@
 set mbox_type=Maildir
-set folder=~/.local/share/mail/aleia/outlook
-# set spoolfile=+/INBOX
-# set record = +Sent # /Sent ? +sent ?
+set folder=~/.local/share/mail/aleia
+
 set from="Guillaume Attia <guillaume.attia@aleia.com>"
 unset record
 set sendmail = "/usr/bin/msmtp -a aleia_outlook"
 
-set edit_headers=yes
 # set mbox=+mbox
 set postponed=+draft
 set signature="~/.config/mutt/accounts/aleia/signature"
 
-set virtual_spoolfile=True
-
+unmailboxes *
 unvirtual-mailboxes *
-set nm_default_url = "notmuch:///home/guillaume/.local/share/mail"
 
 set my_nmq_confluence = "folder:aleia/outlook/INBOX and from:confluence@aleia-project.atlassian.net"
 set my_nmq_jira = "folder:aleia/outlook/INBOX and from:jira@aleia-project.atlassian.net"
@@ -22,7 +18,8 @@ set my_nmq_gitlab = "folder:aleia/outlook/INBOX and from:gitlab@mg.gitlab.com"
 set my_nmq_google_calendar = "folder:aleia/outlook/INBOX and from:calendar-notification@google.com"
 
 
-virtual-mailboxes "Unread" "notmuch://?query=tag:unread"
+virtual-mailboxes "Unread" "notmuch://?query=folder:aleia/outlook/INBOX and tag:unread"
+
 virtual-mailboxes "Inbox" "notmuch://?query=folder:aleia/outlook/INBOX \
   and not ($my_nmq_confluence) \
   and not ($my_nmq_jira) \

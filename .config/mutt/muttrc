@@ -8,15 +8,20 @@ source "~/.config/mutt/keybindings.muttrc"
 set sidebar_visible
 set sidebar_format = "%D%?F? %n [%F]?%* %?N?%N/?%S"
 set mail_check_stats
+set edit_headers=yes
+set virtual_spool_file = yes
 
+
+set nm_default_url = "notmuch:///home/guillaume/.local/share/mail"
 # set vfolder_format = "%6n(%6N) %f"
 ## Aleia OUTLOOK
-source "~/.config/mutt/accounts/aleia/outlook/config.muttrc"
-folder-hook $folder 'source ~/.config/mutt/accounts/aleia/outlook/config.muttrc'
+source "~/.config/mutt/accounts/aleia/config.muttrc"
+folder-hook $folder 'source ~/.config/mutt/accounts/aleia/config.muttrc'
 
 ## Personal GMAIL
-# source "~/.config/mutt/accounts/personal/gmail/config.muttrc"
-# folder-hook $folder 'source ~/.config/mutt/accounts/personal/gmail/config.muttrc'
+source "~/.config/mutt/accounts/personal/gmail/config.muttrc"
+folder-hook $folder 'source ~/.config/mutt/accounts/personal/gmail/config.muttrc'
+
 set sort=reverse-threads
 #set sort_aux=date-received
 set mailcap_path = "$XDG_CONFIG_HOME/mailcap"
@@ -25,5 +30,7 @@ set sleep_time = 0
 unset wait_key
 
 source "~/.config/mutt/colors.muttrc
+
+set query_command="notmuch-addrlookup --mutt '%s'"
 # CHECK THIS
 # https://www.reddit.com/r/commandline/comments/sdvc6d/neomutt_shortcut_to_sync_mailneomutt_without/huhlc8p/

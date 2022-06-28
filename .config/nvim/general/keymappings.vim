@@ -28,9 +28,6 @@ noremap H y$
 " Escape sequence
 inoremap fw <Esc>
 
-" w behaves better
-
-
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
@@ -73,8 +70,8 @@ noremap <leader>to :+tabmove<CR>
 noremap <leader>dt :vsplit<CR><C-w>Tgd
 noremap <leader>ds :vsplit<CR>gd
 
-noremap <C-n> <C-n>
-noremap <C-p> <C-e>
+" noremap <C-n> <C-j>
+" noremap <C-p> <C-e>
 
 " You can't stop me
 cmap w!! w !sudo tee %

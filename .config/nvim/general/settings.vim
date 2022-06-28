@@ -46,4 +46,4 @@ set undofile
 set updatetime=300                      " Faster completion
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:.
 
-au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
+au! BufWritePost $XDG_CONFIG_HOME/nvim/**/*.vim source $MYVIMRC      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

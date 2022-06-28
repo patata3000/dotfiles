@@ -12,7 +12,7 @@
   ],
   "pyright.enable": true,
   "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
+  "python.linting.pylintEnabled": false,
   "python.linting.pylintPath": "/home/guillaume/.local/share/pyenv/versions/py3nvim/bin/pylint",
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "/home/guillaume/.local/share/pyenv/versions/py3nvim/bin/flake8",

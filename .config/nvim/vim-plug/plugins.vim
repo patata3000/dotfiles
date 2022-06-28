@@ -7,7 +7,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'rust-lang/rust.vim'
     Plug 'scrooloose/NERDTree' " File Explorer.
     Plug 'tpope/vim-surround'
-    Plug 'jiangmiao/auto-pairs' " Auto pairs for '(' '[' '{'.
+    " Plug 'jiangmiao/auto-pairs' " Auto pairs for '(' '[' '{'.
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-dadbod' " Database viewer
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Search.
@@ -19,6 +19,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'diepm/vim-rest-console'
     Plug 'fisadev/vim-isort'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-context'
+    Plug 'drybalka/tree-climber.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-neorg/neorg'
     Plug 'nvim-telescope/telescope.nvim'

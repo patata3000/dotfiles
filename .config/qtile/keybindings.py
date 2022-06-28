@@ -89,19 +89,14 @@ application_keys = [
         desc="Screen video recorder",
     ),
     Key([MOD], "f", lazy.spawn("pavucontrol -t 5"), desc="Sound controller"),
+    Key([MOD, SHIFT], "u", lazy.spawn("edit-config"), desc="Edit config files"),
     Key([MOD], "u", lazy.spawn("blueberry"), desc="Bluetooth manager GUI"),
-    Key([MOD], "p", lazy.spawn("term_exec cpass"), desc="Password manager TUI"),
+    Key([MOD], "p", lazy.spawn("pass-get"), desc="Password with dmenu"),
     Key(
         [MOD],
         "v",
         lazy.spawn(f"term_exec nvim -c NeorgStart"),
         desc="TODO list",
-    ),
-    Key(  # Not working without widget probably
-        [MOD, SHIFT],
-        "p",
-        lazy.spawn("pass-get"),
-        desc="Search and copy password into clipboard using fzf and pass",
     ),
     Key(
         [MOD],
@@ -110,20 +105,20 @@ application_keys = [
         desc="Start neomutt in a terminal",
     ),
 ]
-select_group_keys = [
-    Key(
-        [MOD, CONTROL],
-        "y",
-        lazy.screen.prev_group(),
-        desc="Focus previous group",
-    ),
-    Key([MOD, CONTROL], "o", lazy.screen.next_group(), desc="Focus next group"),
-]
+# select_group_keys = [
+#     Key(
+#         [MOD, CONTROL],
+#         "y",
+#         lazy.screen.prev_group(),
+#         desc="Focus previous group",
+#     ),
+#     Key([MOD, CONTROL], "o", lazy.screen.next_group(), desc="Focus next group"),
+# ]
 resize_keys = [
     Key([MOD, CONTROL], "n", [], lazy.layout.grow_down(), desc=""),
     Key([MOD, CONTROL], "e", [], lazy.layout.grow_up(), desc=""),
-    Key([MOD, CONTROL], "y", [], lazy.layout.grow_left(), desc=""),
-    Key([MOD, CONTROL], "o", [], lazy.layout.grow_right(), desc=""),
+    #     Key([MOD, CONTROL], "y", [], lazy.layout.grow_left(), desc=""),
+    #     Key([MOD, CONTROL], "o", [], lazy.layout.grow_right(), desc=""),
 ]
 layout_keys = [
     # Toggle between split and unsplit sides of stack.

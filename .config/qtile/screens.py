@@ -5,6 +5,7 @@ from libqtile.config import Screen
 from libqtile.bar import Bar
 from libqtile import bar, widget
 from status_bar import get_status_bar
+import subprocess
 
 
 def get_num_monitors():
@@ -37,6 +38,10 @@ def get_num_monitors():
 NUM_MONITORS = get_num_monitors()
 NUM_SCREENS = max(NUM_MONITORS, 1)
 screens = [
-    Screen(top=get_status_bar(True))  # is_main_screen=(screen_number == 0))
+    Screen(
+        top=get_status_bar(True if screen_number == 0 else False),
+        wallpaper="~/Pictures/wallpaper/current_wallpaper.jpg",
+        wallpaper_mode="fill",
+    )  # is_main_screen=(screen_number == 0))
     for screen_number in range(NUM_SCREENS)
 ]

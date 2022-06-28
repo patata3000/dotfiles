@@ -40,13 +40,14 @@ floating_layout = layout.Floating(
         Match(wm_class="pinentry-gtk-2"),  # GPG key password entry
         Match(wm_class="qutebrowser", title="Open"),
         Match(wm_class="shutter"),
-        Match(wm_class="soffice"),
+        # Match(wm_class="soffice"),
         Match(wm_class="splash"),
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(wm_class="toolbar"),
         Match(wm_class="wally"),
         Match(wm_class="zenity"),
         Match(wm_class="pinentrygnome3"),
+        Match(title="fzfmenu"),
         # Match(wm_class="microsoft teams - preview"),  # ssh-askpass
     ]
 )

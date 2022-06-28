@@ -1,41 +1,66 @@
-IMAPAccount gmail
-# Address to connect to
+IMAPAccount perso-gmail
 Host imap.gmail.com
-User aittaemualliug@gmail.com
-Pass kaesoo6ech1Au6po
-# To store the password in an encrypted file use PassCmd instead of Pass
-# PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mailpass.gpg"
-#
-# Use SSL
+Port 993
+User guillaume.attia91@gmail.com
+PassCmd "/usr/bin/python3 /home/guillaume/.local/bin/oauth2_mutt.py /home/guillaume/.local/share/pass/aleia/web/gmail_token_thunderbird.gpg"
+AuthMech XOAUTH2
 SSLType IMAPS
-# The following line should work. If you get certificate errors, uncomment the
-# two following lines and read the "Troubleshooting" section.
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-#CertificateFile ~/.cert/imap.gmail.com.pem
-#CertificateFile ~/.cert/Equifax_Secure_CA.pem
+SSLVersions TLSv1
+# CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore gmail-remote
-Account gmail
+IMAPStore perso-gmail-remote
+Account perso-gmail
 
-MaildirStore gmail-local
+MaildirStore perso-gmail-local
 SubFolders Verbatim
-# The trailing "/" is important
-Path ~/.local/share/mail/perso/
-Inbox ~/.local/share/mail/perso/Inbox
+Path ~/.local/share/mail/perso/gmail/
+Inbox ~/.local/share/mail/perso/gmail/INBOX
 
-Channel gmail
-Far :gmail-remote:
-Near :gmail-local:
-# Exclude everything under the internal [Gmail] folder, except the interesting folders
-Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
-# Or include everything
-#Patterns *
+Channel sync-perso-gmail-default
+Far :perso-gmail-remote:"[Gmail]/All Mail"
+Near :perso-gmail-local:INBOX # Maybe remove INBOX here and end by :
 # Automatically create missing mailboxes, both locally and on the server
 Create Both
 # Sync the movement of messages between folders and deletions, add after making sure the sync works
 Expunge Both
 # Save the synchronization state files in the relevant directory
 SyncState *
+
+Channel sync-perso-gmail-draft
+Far :perso-gmail-remote:"[Gmail]/Drafts"
+Near :perso-gmail-local:draft
+Create Both
+Expunge Both
+SyncState *
+
+Channel sync-perso-gmail-spam
+Far :perso-gmail-remote:"[Gmail]/Spam"
+Near :perso-gmail-local:spam
+Create Both
+Expunge Both
+SyncState *
+
+Channel sync-perso-gmail-sent
+Far :perso-gmail-remote:"[Gmail]/Sent Mail"
+Near :perso-gmail-local:sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel sync-perso-gmail-trash
+Far :perso-gmail-remote:"[Gmail]/Bin"
+Near :perso-gmail-local:trash
+Create Both
+Expunge Both
+SyncState *
+
+# Get all the channels together into a group.
+Group perso-gmail
+Channel sync-perso-gmail-default
+Channel sync-perso-gmail-draft
+Channel sync-perso-gmail-spam
+Channel sync-perso-gmail-sent
+Channel sync-perso-gmail-trash
 
 ##############
 ##############

@@ -24,7 +24,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%a</b>\n%s\n%b%p"
+    format = "<b>%s</b>\n%b"
 
     # Display indicators for URLs (U) and actions (A).
     show_indicators = yes
@@ -211,6 +211,11 @@
 ## This notification will not be displayed
 #    summary = "foobar"
 #    format = ""
+
+[signed_on]
+    appname = notify-send
+    summary = "*signed on*"
+    urgency = low
 
 [signed_on]
     appname = Pidgin

@@ -10,3 +10,17 @@ auth xoauth2
 user guillaume.attia@aleia.com
 from guillaume.attia@aleia.com
 passwordeval "/usr/bin/python3 /home/guillaume/.local/bin/oauth2_mutt.py /home/guillaume/.local/share/pass/aleia/web/outlook_token_thunderbird.gpg"
+
+
+account perso_gmail
+host smtp.gmail.com
+port 587
+protocol smtp
+tls on
+tls_starttls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+tls_certcheck on
+auth xoauth2
+user guillaume.attia91@gmail.com
+from guillaume.attia91@gmail.com
+passwordeval "/usr/bin/python3 /home/guillaume/.local/bin/oauth2_mutt.py /home/guillaume/.local/share/pass/aleia/web/gmail_token_thunderbird.gpg"

@@ -1,0 +1,11 @@
+[Unit]
+Description=Mailbox notification service
+
+[Service]
+EnvironmentFile=/etc/sysconfig/mbsync
+ExecStart=/usr/bin/goimapnotify -conf /home/guillaume/.config/imapnotify/perso_gmail.conf
+Restart=always
+RestartSec=12
+
+[Install]
+WantedBy=default.target

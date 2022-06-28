@@ -1,0 +1,128 @@
+#!/usr/bin/env python3
+
+import json
+import os
+from pathlib import Path
+
+from sys import argv, stderr
+
+
+def get_excluded_files():
+    excluded_files = []
+    with open(
+        os.path.join(
+            os.path.expanduser(os.getenv("XDG_CONFIG_DIR", "~/.config")),
+            "edit-config",
+            "excluded_files",
+        ),
+        "r",
+        encoding="utf8",
+    ) as excluded_files_file:
+        for excl_dir in excluded_files_file:
+            excluded_files.append(excl_dir.strip())
+    return excluded_files
+
+
+EXCLUDE_DIRS_STR = get_excluded_files()
+ROOT_DIR = "/home/guillaume/.config"
+EXCLUDE_DIRS = [
+    path
+    for excl_dir in EXCLUDE_DIRS_STR
+    for path in Path(ROOT_DIR).glob(excl_dir)
+]
+
+
+def file_is_excl(file):
+    for excl_dir in EXCLUDE_DIRS:
+        if file == excl_dir:
+            return True
+    return False
+
+
+def iterdir(path: Path, file_list: list, priority_list):
+    for file in path.iterdir():
+        if file_is_excl(file):
+            continue
+        if file.is_dir():
+            iterdir(file, file_list, priority_list)
+        elif file not in priority_list:
+            file_list.append(str(file.relative_to(ROOT_DIR)))
+
+
+def init_iter(root_dir):
+    priority_list = get_priority_files()
+    file_list = []
+    iterdir(Path(root_dir), file_list, priority_list)
+    priority_list.extend(file_list)
+    print("\n".join(priority_list))
+
+
+def get_priority_filepath():
+    data_dir = os.path.join(
+        os.path.expanduser(os.getenv("XDG_DATA_DIR") or "~/.local/share/"),
+        "edit-config",
+    )
+    os.makedirs(data_dir, exist_ok=True)
+    return os.path.join(data_dir, "priority_list")
+
+
+def get_priority_files():
+    priority_dict_filepath = get_priority_filepath()
+    try:
+        with open(priority_dict_filepath, "r", encoding="utf8") as prio_fp:
+            loaded_priority_dict = json.load(prio_fp)
+        return [
+            key
+            for key, _ in sorted(
+                loaded_priority_dict.items(),
+                key=lambda item: item[1],
+                reverse=True,
+            )
+        ]
+    except FileNotFoundError:
+        print(
+            f"File not found: {priority_dict_filepath}. Creating...",
+            file=stderr,
+        )
+        create_priority_file(priority_dict_filepath)
+    except AttributeError:
+        print(
+            f"File is not the right format: {priority_dict_filepath}."
+            "Please either delete it to reset or repair it. Skipping...",
+            file=stderr,
+        )
+    return []
+
+
+def create_priority_file(priority_dict_filepath):
+    with open(priority_dict_filepath, "w+", encoding="utf8") as prio_fp:
+        json.dump({}, prio_fp)
+
+
+def add_one_priority(filename):
+    priority_list_filepath = get_priority_filepath()
+    with open(
+        priority_list_filepath, "r", encoding="utf8"
+    ) as priority_list_file:
+        try:
+            file_priority_dict = json.load(priority_list_file)
+        except json.JSONDecodeError:
+            print(
+                "File doesn't have correct format or is empty:"
+                f" {priority_list_filepath}. File should be a json dict."
+                " Please correct or delete it. Skipping..."
+            )
+            return
+    if filename:
+        file_priority_dict[filename] = file_priority_dict.get(filename, 0) + 1
+    with open(
+        priority_list_filepath, "w+", encoding="utf8"
+    ) as priority_list_file:
+        json.dump(file_priority_dict, priority_list_file)
+
+
+if __name__ == "__main__":
+    if len(argv) == 3 and argv[1] == "--add-file-priority":
+        add_one_priority(argv[2].strip())
+    else:
+        init_iter(ROOT_DIR)

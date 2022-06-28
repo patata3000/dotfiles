@@ -1,10 +1,12 @@
 #!/usr/bin/bash
 
-CONFIG_FILES=$HOME/.config/scripts/config-files
+CONFIG_FILES=$HOME/.config/scripts/edit-config
 
-choice=$(awk '{print $1}' "$CONFIG_FILES" | dmenu -i -l 10 -c -f -p 'edit config:')
+choice=$(edit-config-py | fzfmenu --reverse)
+# TODO Add condition $choice is not ""
+edit-config-py "--add-file-priority" "$choice"
 
 if [ "$choice" ]; then
-    cfg=$(grep "^$choice " "$CONFIG_FILES" | awk '{print $NF}')
-    gnome-terminal -- "$EDITOR" "$HOME/$cfg"
+    SUPERDIR=`echo "$choice" | cut -d'/' -f1`
+    kitty -d "$HOME/.config/$SUPERDIR" -- "$EDITOR" "$HOME/.config/$choice"
 fi

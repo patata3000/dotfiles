@@ -9,6 +9,7 @@ echo $ZSH
 export PATH
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:."
+PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 
 export ZSH_THEME="my-avit"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass

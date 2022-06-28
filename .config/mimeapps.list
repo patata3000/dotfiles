@@ -6,6 +6,7 @@ x-scheme-handler/https=qutebrowser-nw.desktop
 x-scheme-handler/about=qutebrowser-nw.desktop
 x-scheme-handler/unknown=qutebrowser-nw.desktop
 x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/mailto=neomutt.desktop
 image/jpeg=vimiv.desktop
 image/png=vimiv.desktop
 audio/aac=mpv.desktop

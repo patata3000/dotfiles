@@ -1,4 +1,4 @@
 " Mappings
 noremap <leader>fb :Ag 
 noremap <leader>fc :Ag <c-r>=expand("<cword>")<CR><CR>
-noremap <leader>fn :Maps<CR>
+noremap <leader>km :Maps<CR>

@@ -34,5 +34,5 @@ end
 EOF
 
 
-nnoremap <M-l> :lua leap_bidirectional()<CR>
+nnoremap <leader>s :lua leap_bidirectional()<CR>
 nnoremap gl :lua leap_all_windows()<CR>

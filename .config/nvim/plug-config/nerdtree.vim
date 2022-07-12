@@ -1,6 +1,5 @@
 let NERDTreeIgnore=['__pycache__']
 " Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
 
 " NERDTree
 " nmap <C-n> :NERDTreeToggle<CR><C-w>=
@@ -26,7 +25,7 @@ function! SyncTree()
 endfunction
 
 " Highlight currently open buffer in NERDTree
-autocmd BufRead * call SyncTree()
+" autocmd BufRead * call SyncTree()
 
 function! ToggleNerdTree()
   set eventignore=BufEnter
@@ -35,16 +34,14 @@ function! ToggleNerdTree()
 endfunction
 
 
-noremap <leader>n :call ToggleNerdTree()<CR><C-w>=
-" nnoremap <C-n> :NERDTreeFocus<CR>
+noremap <leader>tt :call ToggleNerdTree()<CR><C-w>=
+nnoremap <leader>ts :call SyncTree()<CR>
+nnoremap <leader>tf :NERDTreeFocus<CR>
 " nnoremp <C-t> :NERDTreeToggle<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 let NERDTreeMapActivateNode='o'
 let NERDTreeMapCustomOpen='<TAB>'
-
 let NERDTreeMenuUp='e'
-let NERDTreeMapOpenExpl='k'
-
 let NERDTreeMenuDown='n'
-
+let NERDTreeMapOpenExpl='k'
 let NERDTreeMinimalUI=1

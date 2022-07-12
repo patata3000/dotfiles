@@ -72,6 +72,15 @@ select_screen_keys = [
 ]
 application_keys = [
     Key(
+        [MOD, SHIFT],
+        "g",
+        lazy.spawn(
+            "rofi -show-icons -show window -run-shell-command "
+            "'{terminal} -e \"{cmd}; read -n 1 -s\"'",
+        ),
+        desc="Application launcher",
+    ),
+    Key(
         [MOD],
         "g",
         lazy.spawn(

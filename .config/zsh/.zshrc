@@ -69,3 +69,5 @@ alias quteb_lgg='qutebrowser --basedir .local/share/qutebrowser/profiles/lgg'
 
 alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
 
+alias xo="xdg-open"
+alias c=". $HOME/.local/bin/smart_cd"

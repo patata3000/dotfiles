@@ -25,6 +25,13 @@ noremap h y
 noremap Y H
 noremap H y$
 
+noremap gN gJ
+
+" Line management
+noremap <A-s> i"<CR>"<esc>k$
+noremap <A-e> i<CR><esc>k$
+noremap E mxo<esc>`x
+
 " Escape sequence
 inoremap fw <Esc>
 
@@ -32,10 +39,13 @@ inoremap fw <Esc>
 vnoremap < <gv
 vnoremap > >gv
 
-" Window management
-noremap <leader>w- :split<CR>
-noremap <leader>w/ :vsplit<CR>
+" Screen management
+noremap <C-n> <C-e>
+noremap <C-e> <C-y>
 
+" Window management
+noremap <leader>w- :split<cr>
+noremap <leader>w/ :vsplit<CR>
 noremap <leader>wy <C-w>h
 noremap <leader>wo <C-w>l
 noremap <leader>wn <C-w>j
@@ -56,8 +66,8 @@ nnoremap <leader>wd :q<CR>
 nnoremap <leader>w= <C-w>=
 
 " Buffer management
-noremap <A-e> :bprev<CR>
-noremap <A-n> :bnext<CR>
+noremap <A-S-e> :bprev<CR>
+noremap <A-S-n> :bnext<CR>
 noremap <leader>bd :BD<CR>
 
 " Tab management
@@ -73,5 +83,7 @@ noremap <leader>ds :vsplit<CR>gd
 " noremap <C-n> <C-j>
 " noremap <C-p> <C-e>
 
+" Split string
+noremap <leader>Ss i""<Esc>
 " You can't stop me
 cmap w!! w !sudo tee %

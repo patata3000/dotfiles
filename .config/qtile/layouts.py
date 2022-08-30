@@ -48,6 +48,7 @@ floating_layout = layout.Floating(
         Match(wm_class="zenity"),
         Match(wm_class="pinentrygnome3"),
         Match(title="fzfmenu"),
+        Match(title="My game"),
         # Match(wm_class="microsoft teams - preview"),  # ssh-askpass
     ]
 )

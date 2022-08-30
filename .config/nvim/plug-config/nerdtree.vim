@@ -36,7 +36,8 @@ endfunction
 
 noremap <leader>tt :call ToggleNerdTree()<CR><C-w>=
 nnoremap <leader>ts :call SyncTree()<CR>
-nnoremap <leader>tf :NERDTreeFocus<CR>
+nnoremap <leader>tf :call SyncTree()<CR>:NERDTreeFocus<CR>
+nnoremap <leader>tF :NERDTreeFocus<CR>
 " nnoremp <C-t> :NERDTreeToggle<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 let NERDTreeMapActivateNode='o'

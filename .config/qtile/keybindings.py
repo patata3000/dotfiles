@@ -27,12 +27,6 @@ not_sure_what_they_do = [
     ),
     # Key([MOD], "v", lazy.spawn("notify-send 'toto' --icon=dialog-information")),
     # Move windows
-    Key(
-        [MOD, SHIFT],
-        "o",
-        lazy.screen.shuffle_next(),
-        desc="Move window down in current stack",
-    ),
 ]
 move_windows_keys = [
     Key(
@@ -69,6 +63,7 @@ select_windows_keys = [
 select_screen_keys = [
     Key([MOD, CONTROL], "y", lazy.to_screen(0)),
     Key([MOD, CONTROL], "o", lazy.to_screen(1)),
+    Key([MOD, CONTROL], "e", lazy.to_screen(2)),
 ]
 application_keys = [
     Key(
@@ -104,13 +99,19 @@ application_keys = [
     Key(
         [MOD],
         "v",
-        lazy.spawn(f"term_exec nvim -c NeorgStart"),
+        lazy.spawn("term_exec nvim -c NeorgStart"),
         desc="TODO list",
     ),
     Key(
         [MOD],
         "q",
-        lazy.spawn(f"term_exec neomutt"),
+        lazy.spawn("term_exec neomutt"),
+        desc="Start neomutt in a terminal",
+    ),
+    Key(
+        [MOD],
+        "i",
+        lazy.spawn("dunstctl history-pop"),
         desc="Start neomutt in a terminal",
     ),
 ]
@@ -124,8 +125,8 @@ application_keys = [
 #     Key([MOD, CONTROL], "o", lazy.screen.next_group(), desc="Focus next group"),
 # ]
 resize_keys = [
-    Key([MOD, CONTROL], "n", [], lazy.layout.grow_down(), desc=""),
-    Key([MOD, CONTROL], "e", [], lazy.layout.grow_up(), desc=""),
+    # Key([MOD, CONTROL], "n", [], lazy.layout.grow_down(), desc=""),
+    # Key([MOD, CONTROL], "e", [], lazy.layout.grow_up(), desc=""),
     #     Key([MOD, CONTROL], "y", [], lazy.layout.grow_left(), desc=""),
     #     Key([MOD, CONTROL], "o", [], lazy.layout.grow_right(), desc=""),
 ]

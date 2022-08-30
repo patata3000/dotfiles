@@ -20,7 +20,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
 # TODO Make this automatic with venv
-export PYTHONPATH=$PYTHONPATH:$HOME/Projects/code:.
+# export PYTHONPATH=$PYTHONPATH:$HOME/Projects/code:.
 
 if [ -f "${XDG_CACHE_HOME}/gnupg/.gpg-agent-info" ]; then
   . "${XDG_CACHE_HOME}/gnupg/.gpg-agent-info"

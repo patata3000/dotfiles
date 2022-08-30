@@ -6,11 +6,17 @@
 
 config_version: 2
 settings:
+  colors.webpage.bg:
+    global: grey
+  colors.webpage.darkmode.enabled:
+    global: false
   content.desktop_capture:
     https://meet.google.com: true
     https://meet.jit.si: true
   content.geolocation:
     https://passeport.ants.gouv.fr: true
+  content.headers.user_agent:
+    https://www.gitlab.com: Cloudflare workaround gitlab
   content.media.audio_capture:
     https://meet.google.com: true
     https://meet.jit.si: true
@@ -19,6 +25,7 @@ settings:
     https://meet.google.com: true
     https://meet.jit.si: true
     https://teams.microsoft.com: true
+    https://www.codingame.com: true
   content.media.video_capture:
     https://meet.google.com: true
     https://meet.jit.si: true
@@ -32,6 +39,7 @@ settings:
     https://www.fnac.com: false
     https://www.youtube.com: false
   content.register_protocol_handler:
+    https://calendar.google.com?cid=%25s: true
     https://outlook.live.com?mailtouri=%25s: true
     https://outlook.office.com?mailtouri=%25s: true
     https://outlook.office365.com?mailtouri=%25s: true

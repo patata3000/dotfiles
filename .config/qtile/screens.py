@@ -2,10 +2,7 @@
 from Xlib import display as xdisplay
 
 from libqtile.config import Screen
-from libqtile.bar import Bar
-from libqtile import bar, widget
 from status_bar import get_status_bar
-import subprocess
 
 
 def get_num_monitors():
@@ -16,11 +13,8 @@ def get_num_monitors():
         display = xdisplay.Display()
         screen = display.screen()
         resources = screen.root.xrandr_get_screen_resources()
-
         for output in resources.outputs:
-            monitor = display.xrandr_get_output_info(
-                output, resources.config_timestamp
-            )
+            monitor = display.xrandr_get_output_info(output, resources.config_timestamp)
             preferred = False
             if hasattr(monitor, "preferred"):
                 preferred = monitor.preferred

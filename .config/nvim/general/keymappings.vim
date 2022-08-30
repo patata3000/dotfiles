@@ -68,7 +68,6 @@ nnoremap <leader>w= <C-w>=
 " Buffer management
 noremap <A-S-e> :bprev<CR>
 noremap <A-S-n> :bnext<CR>
-noremap <leader>bd :BD<CR>
 
 " Tab management
 noremap <leader>tn :tabnew<CR>

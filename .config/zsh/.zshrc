@@ -62,6 +62,7 @@ source <(plz --completion_script)
 
 alias lzd='lazydocker'
 alias nv=nvim
+alias nv=nvimvenv
 alias config='/usr/bin/git --git-dir=$XDG_DATA_HOME/dotfiles/ --work-tree=$HOME'
 
 alias quteb_gui='qutebrowser --basedir .local/share/qutebrowser/profiles/guillaume'
@@ -71,3 +72,14 @@ alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
 
 alias xo="xdg-open"
 alias c=". $HOME/.local/bin/smart_cd"
+
+function nvimvenv {
+  if [[ -e "$VIRTUAL_ENV" && -f "$VIRTUAL_ENV/bin/activate" ]]; then
+    source "$VIRTUAL_ENV/bin/activate"
+    command nvim $@
+    deactivate
+  else
+    command nvim $@
+  fi
+}
+

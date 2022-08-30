@@ -11,7 +11,6 @@ source $HOME/.config/nvim/vim-plug/plugins.vim " Plugins
 " source $HOME/.config/nvim/plug-config/indent-blankline.vim " Vim-surround settings
 " source $HOME/.config/nvim/plug-config/ultisnips.vim " Utilsnips
 source $HOME/.config/nvim/plug-config/black.vim " Format python files
-source $HOME/.config/nvim/plug-config/format-json.vim " Format json settings
 source $HOME/.config/nvim/plug-config/fugitive.vim " Fugitive settings
 source $HOME/.config/nvim/plug-config/fzf.vim " Fzf
 source $HOME/.config/nvim/plug-config/isort.vim " Isort
@@ -26,6 +25,7 @@ source $HOME/.config/nvim/plug-config/treesitter/context.vim " Treesitter contex
 source $HOME/.config/nvim/plug-config/treesitter/context-commentstring.vim " Treesitter context
 source $HOME/.config/nvim/plug-config/treesitter/textobjects.vim " Treesitter textobjects
 source $HOME/.config/nvim/plug-config/treesitter/treesitter.vim " Treesitter
+source $HOME/.config/nvim/plug-config/vim-bufkill.vim " Vim-bufkill settings
 source $HOME/.config/nvim/plug-config/vim-surround.vim " Vim-surround settings
 
 " Themes

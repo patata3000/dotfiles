@@ -158,7 +158,7 @@
     close_all = mod4+ctrl+m
 
     # redisplay last message(s)
-    history = mod4+comma
+    history = mod4+2
 
     # context menu
     context = mod4+ctrl+i

@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.muttrc setfiletype muttrc
+../../../../../home/guillaume/dotfiles/nvim/home/guillaume/.config/nvim/ftdetect/muttrc.vim

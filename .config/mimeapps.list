@@ -1,14 +1,1 @@
-[Default Applications]
-x-scheme-handler/msteams=teams.desktop
-text/html=qutebrowser-nw.desktop
-x-scheme-handler/http=qutebrowser-nw.desktop
-x-scheme-handler/https=qutebrowser-nw.desktop
-x-scheme-handler/about=qutebrowser-nw.desktop
-x-scheme-handler/unknown=qutebrowser-nw.desktop
-x-scheme-handler/postman=Postman.desktop
-x-scheme-handler/mailto=neomutt.desktop
-image/jpeg=vimiv.desktop
-image/png=vimiv.desktop
-audio/aac=mpv.desktop
-audio/x-hx-aac-adts=mpv.desktop
-application/pdf=evince.desktop
+../../../home/guillaume/dotfiles/mimeapps/home/guillaume/.config/mimeapps.list

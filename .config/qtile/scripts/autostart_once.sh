@@ -1,7 +1,1 @@
-#!/usr/bin/zsh
-gpg-connect-agent /bye &
-blueberry-tray &
-pasystray &
-nm-applet &
-optimus-manager-qt &
-udiskie &
+../../../../../home/guillaume/dotfiles/qtile/home/guillaume/.config/qtile/scripts/autostart_once.sh

@@ -1,1 +1,1 @@
-#!/usr/bin/zsh
+../../../../../home/guillaume/dotfiles/qtile/home/guillaume/.config/qtile/scripts/autostart_complete.sh

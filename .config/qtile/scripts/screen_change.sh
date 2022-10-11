@@ -1,4 +1,1 @@
-#!/usr/bin/zsh
-autorandr -c &
-qtile cmd-obj -o cmd -f restart &
-
+../../../../../home/guillaume/dotfiles/qtile/home/guillaume/.config/qtile/scripts/screen_change.sh

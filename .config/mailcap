@@ -1,4 +1,1 @@
-text/html; qutebrowser --target window %s; needsterminal; nametemplate=%s.html
-application/pdf; evince %s
-image/*; vimiv %s
-video/*; mpv %s
+../../../home/guillaume/dotfiles/mailcap/home/guillaume/.config/mailcap
